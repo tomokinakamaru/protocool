@@ -1,0 +1,15 @@
+plugins {
+    id 'com.github.johnrengelman.shadow' version '5.1.0'
+}
+
+dependencies {
+    implementation 'info.picocli:picocli:4.0.3'
+    implementation project(':protocool-core')
+}
+
+shadowJar {
+    manifest.attributes(
+            'Main-Class' : "${project.group}.${rootProject.name}.cli.Main",
+            'Version': "${project.version}"
+    )
+}
