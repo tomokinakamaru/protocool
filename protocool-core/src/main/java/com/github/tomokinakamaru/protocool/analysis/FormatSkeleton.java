@@ -5,7 +5,7 @@ import com.github.tomokinakamaru.protocool.parser.SpecificationParser.Specificat
 import com.google.googlejavaformat.java.Formatter;
 import com.google.googlejavaformat.java.FormatterException;
 
-public final class FormatSkeleton extends Analysis {
+public class FormatSkeleton extends Analysis {
 
   private static final Formatter formatter = new Formatter();
 
