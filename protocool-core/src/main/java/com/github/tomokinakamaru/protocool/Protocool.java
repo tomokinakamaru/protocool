@@ -2,6 +2,7 @@ package com.github.tomokinakamaru.protocool;
 
 import com.github.tomokinakamaru.protocool.analysis.AnnotateStatic;
 import com.github.tomokinakamaru.protocool.analysis.AssignEvaluator;
+import com.github.tomokinakamaru.protocool.analysis.AssignOwnerChain;
 import com.github.tomokinakamaru.protocool.analysis.AssignOwnerClazz;
 import com.github.tomokinakamaru.protocool.analysis.AssignOwnerSpecification;
 import com.github.tomokinakamaru.protocool.analysis.AssignPackage;
@@ -28,6 +29,7 @@ import com.github.tomokinakamaru.protocool.analysis.BuildSignature;
 import com.github.tomokinakamaru.protocool.analysis.FindConflict;
 import com.github.tomokinakamaru.protocool.analysis.FormatSkeleton;
 import com.github.tomokinakamaru.protocool.analysis.GenerateApiSkeleton;
+import com.github.tomokinakamaru.protocool.analysis.GenerateBaseFile;
 import com.github.tomokinakamaru.protocool.analysis.GenerateClassAstSkeleton;
 import com.github.tomokinakamaru.protocool.analysis.GenerateMethodAstSkeleton;
 import com.github.tomokinakamaru.protocool.analysis.PropagateParameter;
@@ -62,6 +64,7 @@ public class Protocool {
     return Arrays.asList(
         new AssignOwnerSpecification(),
         new AssignOwnerClazz(),
+        new AssignOwnerChain(),
         new AssignPackage(),
         new BuildClazzTable(),
         new BuildParameterTable(),
@@ -92,6 +95,7 @@ public class Protocool {
         new GenerateApiSkeleton(),
         new GenerateClassAstSkeleton(),
         new GenerateMethodAstSkeleton(),
+        new GenerateBaseFile(),
         new FormatSkeleton());
   }
 }

@@ -9,12 +9,14 @@ import com.github.tomokinakamaru.protocool.data.Parameters;
 import com.github.tomokinakamaru.protocool.data.State;
 import com.github.tomokinakamaru.protocool.data.Transition;
 import com.github.tomokinakamaru.protocool.parser.SpecificationParser.ArgumentContext;
+import com.github.tomokinakamaru.protocool.parser.SpecificationParser.ChainContext;
 import com.github.tomokinakamaru.protocool.parser.SpecificationParser.ClazzContext;
 import com.github.tomokinakamaru.protocool.parser.SpecificationParser.MethodContext;
 import com.github.tomokinakamaru.protocool.parser.SpecificationParser.ReferenceContext;
 import java.util.List;
+import java.util.Set;
 
-public class ApiSkeletonBuilder extends FileBuilder {
+public class ApiBuilder extends FileBuilder {
 
   private final ClazzContext context;
 
@@ -22,7 +24,7 @@ public class ApiSkeletonBuilder extends FileBuilder {
 
   private final State state;
 
-  public ApiSkeletonBuilder(ClazzContext context, Automaton automaton, State state) {
+  public ApiBuilder(ClazzContext context, Automaton automaton, State state) {
     this.context = context;
     this.automaton = automaton;
     this.state = state;
@@ -84,6 +86,20 @@ public class ApiSkeletonBuilder extends FileBuilder {
   }
 
   private void buildClassBody() {
+    if (state.context == null) {
+      append("java.util.List<Method$>", "methods", ";");
+    }
+    if (state.context != null) {
+      String nodeName = state.context.ownerChain.nodeName;
+      append(nodeName);
+      Parameters parameters = new Parameters();
+      Set<ChainContext> chains = context.ownerSpecification.classNodeTable.get(nodeName);
+      for (ChainContext c : chains) {
+        parameters.addAll(c.parameters);
+      }
+      append(buildParameters(parameters, false));
+      append("clazz", ";");
+    }
     for (Transition t : automaton.getTransitionsFrom(state)) {
       buildMethod(t);
     }
@@ -146,17 +162,28 @@ public class ApiSkeletonBuilder extends FileBuilder {
 
     if (ref != null) {
       if (ref.foreignTypeDestination != null) {
-        if (ref.qualifiedName().getText().equals("void")) {
-          append(method.evaluator, "();");
-        } else {
-          append("return", method.evaluator, "();");
+        append("this.methods.add($);");
+        String nodeName = "Class$" + ref.qualifiedName().getText().replace(".", "_");
+        String type = nodeName + buildParameters(ref.parameters, false);
+        append(type, "$$", "=", "new", type, "();");
+        if (!ref.qualifiedName().getText().equals("void")) {
+          append("return");
         }
+        append(method.evaluator, "($$);");
       } else if (ref.clazzDestination != null) {
-        append("return", "new");
-        append(buildAPIRawName(transition.destination, context));
-        append(buildParameters(dst.parameters, false));
-        append("();");
+        String type = buildAPIRawName(transition.destination, context);
+        type += buildParameters(dst.parameters, false);
+        append(type, "$$", "=", "new", type, "();");
+
+        if (method.isStatic && state.isInitial()) {
+          append("$$.methods = new java.util.ArrayList<Method$>();");
+        } else {
+          append("$$.methods = this.methods;");
+        }
+        append("$$.methods.add($);");
+        append("return $$;");
       } else {
+        append("this.methods.add($);");
         append("return", method.evaluator, "();");
       }
     } else {
@@ -164,10 +191,18 @@ public class ApiSkeletonBuilder extends FileBuilder {
       if (method.evaluator != null) {
         append(eval, "();");
       }
-      append("return", "new");
-      append(buildAPIRawName(transition.destination, context));
-      append(buildParameters(dst.parameters, false));
-      append("();");
+
+      String type = buildAPIRawName(transition.destination, context);
+      type += buildParameters(dst.parameters, false);
+      append(type, "$$", "=", "new", type, "();");
+
+      if (method.isStatic && state.isInitial()) {
+        append("$$.methods = new java.util.ArrayList<Method$>();");
+      } else {
+        append("$$.methods = this.methods;");
+      }
+      append("$$.methods.add($);");
+      append("return $$;");
     }
   }
 

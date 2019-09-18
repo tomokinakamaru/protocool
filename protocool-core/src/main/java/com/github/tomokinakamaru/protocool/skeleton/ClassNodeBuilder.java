@@ -8,11 +8,11 @@ import com.github.tomokinakamaru.protocool.data.Parameters;
 import com.github.tomokinakamaru.protocool.parser.SpecificationParser.ChainContext;
 import java.util.Set;
 
-public class ClassAstSkeletonBuilder extends FileBuilder {
+public class ClassNodeBuilder extends FileBuilder {
 
   private final Set<ChainContext> contexts;
 
-  public ClassAstSkeletonBuilder(Set<ChainContext> contexts) {
+  public ClassNodeBuilder(Set<ChainContext> contexts) {
     this.contexts = contexts;
   }
 

@@ -2,11 +2,11 @@ package matrix;
 
 final class Evaluator {
 
-  static int[][] toIntArray() {
+  static int[][] toIntArray(Class$int $$) {
     return null;
   }
 
-  static float[][] toFloatArray() {
+  static float[][] toFloatArray(Class$float $$) {
     return null;
   }
 }

@@ -2,7 +2,7 @@ package neuralnetwork;
 
 final class Evaluator {
 
-  static String layerToString() {
+  static String layerToString(Class$String $$) {
     return null;
   }
 }

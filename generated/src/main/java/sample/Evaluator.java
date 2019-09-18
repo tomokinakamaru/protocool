@@ -2,7 +2,7 @@ package sample;
 
 public class Evaluator {
 
-  static void run() {}
+  static void run(Class$void $$) {}
 
   static <T> T any() {
     return null;
@@ -12,7 +12,7 @@ public class Evaluator {
 
   static void methodY() {}
 
-  static Object wildcard() {
+  static Object wildcard(Class$java_lang_Object $$) {
     return null;
   }
 }

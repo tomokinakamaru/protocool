@@ -91,6 +91,7 @@ argument returns [
 reference returns [
     ClazzContext ownerClazz,
     ClazzContext clazzDestination,
+    ChainContext ownerChain,
     ParameterContext parameterDestination,
     ForeignType foreignTypeDestination,
     String normalizedText,

@@ -6,11 +6,11 @@ import static com.github.tomokinakamaru.protocool.skeleton.Utility.getText;
 import com.github.tomokinakamaru.protocool.parser.SpecificationParser.ArgumentContext;
 import com.github.tomokinakamaru.protocool.parser.SpecificationParser.MethodContext;
 
-public class MethodAstSkeletonBuilder extends FileBuilder {
+public class MethodNodeBuilder extends FileBuilder {
 
   private final MethodContext context;
 
-  public MethodAstSkeletonBuilder(MethodContext context) {
+  public MethodNodeBuilder(MethodContext context) {
     this.context = context;
   }
 
@@ -39,6 +39,7 @@ public class MethodAstSkeletonBuilder extends FileBuilder {
   private void buildClassHead() {
     append("public", "final", "class", context.nodeName);
     append(buildParameters(context.parameters, true));
+    append("extends", "Method$");
   }
 
   private void buildClassBody() {
