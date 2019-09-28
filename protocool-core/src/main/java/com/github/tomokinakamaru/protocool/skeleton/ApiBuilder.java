@@ -121,7 +121,9 @@ public class ApiBuilder extends FileBuilder {
     }
 
     Parameters params = transition.destination.parameters.copy();
-    params.removeAll(transition.source.parameters);
+    if (!transition.symbol.getMethodContext().isStatic) {
+      params.removeAll(transition.source.parameters);
+    }
     append(buildParameters(params, true));
 
     ReferenceContext c = transition.destination.context;

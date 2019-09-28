@@ -29,15 +29,21 @@ public class PropagateParameter extends AutomatonAnalysis {
         }
 
         State dst = transition.destination;
-        Parameters srcSymParams = src.parameters.union(symbol.getMethodContext().parameters);
+        Parameters srcParams = src.parameters.copy();
+        Parameters symParams = symbol.getMethodContext().parameters.copy();
+        Parameters srcSymParams = srcParams.union(symParams);
 
         if (dst.parameters != null) {
           if (!dst.parameters.equals(srcSymParams)) {
-            State state = clone(automaton, dst);
-            state.parameters = srcSymParams;
-            automaton.transitions.add(new Transition(src, symbol, state));
-            automaton.transitions.remove(transition);
-            queue.add(state);
+            if (symParams.isEmpty()) {
+              dst.parameters = srcSymParams;
+            } else {
+              State state = clone(automaton, dst);
+              state.parameters = srcSymParams;
+              automaton.transitions.add(new Transition(src, symbol, state));
+              automaton.transitions.remove(transition);
+              queue.add(state);
+            }
           }
         } else {
           dst.parameters = srcSymParams;

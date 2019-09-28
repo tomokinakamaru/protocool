@@ -9,7 +9,6 @@ import com.github.tomokinakamaru.protocool.analysis.AssignPackage;
 import com.github.tomokinakamaru.protocool.analysis.AssignParameters;
 import com.github.tomokinakamaru.protocool.analysis.AssignStateNumber;
 import com.github.tomokinakamaru.protocool.analysis.AssignStateReference;
-import com.github.tomokinakamaru.protocool.analysis.BackPropagateParameter;
 import com.github.tomokinakamaru.protocool.analysis.BuildClassNodeBaseName;
 import com.github.tomokinakamaru.protocool.analysis.BuildClassNodeName;
 import com.github.tomokinakamaru.protocool.analysis.BuildClassNodeNameTable;
@@ -89,7 +88,7 @@ public class Protocool {
         new PropagateParameter(),
         new AssignStateReference(),
         new RemoveFinalStates(),
-        new BackPropagateParameter(),
+        // new BackPropagateParameter(),
         new FindConflict(),
         new AssignStateNumber(),
         new GenerateApiSkeleton(),
