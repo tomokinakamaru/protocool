@@ -7,5 +7,4 @@ public class TestItemize {
   void main() {
     Begin.begin(1).begin(1).end(1).end(1);
   }
-
 }
