@@ -3,7 +3,7 @@ plugins {
 }
 
 dependencies {
-    implementation 'info.picocli:picocli:4.0.3'
+    implementation 'info.picocli:picocli:4.0.4'
     implementation project(':protocool-core')
 }
 
