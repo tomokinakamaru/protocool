@@ -18,24 +18,26 @@ import picocli.CommandLine;
 public final class Main implements Runnable {
 
   @CommandLine.Parameters(index = "0", description = "Input file")
-  private Path inputPath;
+  private Path inputPath = null;
 
   @CommandLine.Option(
       names = {"-o", "--output-dir"},
       description = "Output directory")
   private Path outputDirectory = Paths.get("");
 
+  @SuppressWarnings("unused")
   @CommandLine.Option(
       names = {"-h", "--help"},
       usageHelp = true,
       description = "Display this help message")
-  private boolean usageHelpRequested;
+  private boolean usageHelpRequested = false;
 
+  @SuppressWarnings("unused")
   @CommandLine.Option(
       names = {"-v", "--version"},
       versionHelp = true,
       description = "Display version info")
-  private boolean versionInfoRequested;
+  private boolean versionInfoRequested = false;
 
   private Main() {}
 
