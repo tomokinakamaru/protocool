@@ -4,4 +4,6 @@ include 'protocool-cli'
 
 include 'protocool-core'
 
+include 'protocool-parser'
+
 include 'generated'
