@@ -10,13 +10,13 @@ abstract class TestParse {
 
   abstract Consumer<Parser> consumer();
 
-  void testSuccess(String string) {
+  void test(String string) {
     Lexer lexer = new Lexer(CharStreams.fromString(string));
     Parser parser = new Parser(new CommonTokenStream(lexer));
     consumer().accept(parser);
   }
 
   void testFail(String string) {
-    assertThrows(RuntimeException.class, () -> testSuccess(string));
+    assertThrows(RuntimeException.class, () -> test(string));
   }
 }

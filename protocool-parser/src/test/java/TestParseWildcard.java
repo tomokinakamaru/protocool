@@ -12,7 +12,7 @@ final class TestParseWildcard extends TestParse {
 
   @ParameterizedTest
   @ValueSource(strings = {"?", "? extends T", "? super T"})
-  void testSuccess(String string) {
-    super.testSuccess(string);
+  void test(String string) {
+    super.test(string);
   }
 }

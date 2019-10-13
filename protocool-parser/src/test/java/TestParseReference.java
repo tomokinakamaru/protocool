@@ -12,7 +12,7 @@ final class TestParseReference extends TestParse {
 
   @ParameterizedTest
   @ValueSource(strings = {"T", "T<P>", "T<P,P>", "T[]"})
-  void testSuccess(String string) {
-    super.testSuccess(string);
+  void test(String string) {
+    super.test(string);
   }
 }

@@ -12,8 +12,8 @@ final class TestParseQualifiedName extends TestParse {
 
   @ParameterizedTest
   @ValueSource(strings = {"name", "name.name", "name.name.name"})
-  void testSuccess(String string) {
-    super.testSuccess(string);
+  void test(String string) {
+    super.test(string);
   }
 
   @ParameterizedTest
