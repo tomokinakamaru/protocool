@@ -1,6 +1,7 @@
-package com.github.tomokinakamaru.protocool.analysis.data;
+package com.github.tomokinakamaru.protocool.automaton;
 
 import com.github.tomokinakamaru.fsa.StateInterface;
+import com.github.tomokinakamaru.protocool.analysis.data.Parameters;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ReferenceContext;
 
 public class State implements StateInterface {

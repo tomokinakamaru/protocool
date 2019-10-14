@@ -11,6 +11,7 @@ grammar Specification;
     import java.nio.file.Path;
     import java.nio.file.Paths;
     import com.github.tomokinakamaru.protocool.analysis.data.*;
+    import com.github.tomokinakamaru.protocool.automaton.Automaton;
 }
 
 @parser::members {

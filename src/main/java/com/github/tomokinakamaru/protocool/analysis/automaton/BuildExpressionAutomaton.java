@@ -1,8 +1,8 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
 import com.github.tomokinakamaru.protocool.analysis.Analysis;
-import com.github.tomokinakamaru.protocool.analysis.data.Automaton;
-import com.github.tomokinakamaru.protocool.analysis.data.Symbol;
+import com.github.tomokinakamaru.protocool.automaton.Automaton;
+import com.github.tomokinakamaru.protocool.automaton.Symbol;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ElementContext;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ExpressionContext;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.FactorContext;

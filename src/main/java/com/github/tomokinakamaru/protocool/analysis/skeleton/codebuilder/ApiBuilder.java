@@ -4,10 +4,10 @@ import static com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder.
 import static com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder.Utility.getText;
 import static com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder.Utility.isNotLastItem;
 
-import com.github.tomokinakamaru.protocool.analysis.data.Automaton;
 import com.github.tomokinakamaru.protocool.analysis.data.Parameters;
-import com.github.tomokinakamaru.protocool.analysis.data.State;
-import com.github.tomokinakamaru.protocool.analysis.data.Transition;
+import com.github.tomokinakamaru.protocool.automaton.Automaton;
+import com.github.tomokinakamaru.protocool.automaton.State;
+import com.github.tomokinakamaru.protocool.automaton.Transition;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ArgumentContext;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ChainContext;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ClazzContext;
