@@ -49,8 +49,7 @@ public class Protocool {
   public final List<Analysis> processes = new ArrayList<>(defaultProcesses());
 
   public SpecificationContext run(CharStream stream) {
-    Lexer lexer = new Lexer(stream);
-    Parser parser = new Parser(new CommonTokenStream(lexer));
+    Parser parser = new Parser(new CommonTokenStream(new Lexer(stream)));
     SpecificationContext ctx = parser.specification();
     processes.forEach(p -> p.run(ctx));
     return ctx;
