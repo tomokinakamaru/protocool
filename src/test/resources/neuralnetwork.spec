@@ -16,3 +16,5 @@ class Network<IN, OUT> {
 class Layer<IN, OUT> {
   String toString() by Evaluator.layerToString;
 }
+
+foreign String;

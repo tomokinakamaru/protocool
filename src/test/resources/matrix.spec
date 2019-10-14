@@ -24,3 +24,9 @@ class FltMat<R extends Size, C extends Size> {
   FltMat<R, NEW_C> mult(FltMat<C, NEW_C> m);
   float[][] toArray() by Evaluator.toFloatArray;
 }
+
+foreign Size;
+
+foreign int;
+
+foreign float;

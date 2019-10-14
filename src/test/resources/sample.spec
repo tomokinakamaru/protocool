@@ -31,3 +31,15 @@ class MultipleOccurrence {
 class Wildcard {
   java.lang.Object method(java.util.Collection<? extends Wildcard> x) by Evaluator.wildcard;
 }
+
+foreign void;
+
+foreign Runnable;
+
+foreign String;
+
+foreign SampleBase;
+
+foreign java.lang.Object;
+
+foreign java.util.Collection;

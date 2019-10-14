@@ -15,7 +15,6 @@ grammar Specification;
     import com.github.tomokinakamaru.protocool.symboltable.ClazzTable;
     import com.github.tomokinakamaru.protocool.symboltable.ForeignTypeTable;
     import com.github.tomokinakamaru.protocool.symboltable.ParameterTable;
-    import com.github.tomokinakamaru.protocool.entity.ForeignType;
 }
 
 @parser::members {
@@ -35,11 +34,15 @@ specification returns [
     final ClassNodeNameTable classNodeNameTable = new ClassNodeNameTable(),
     final ClassNodeTable classNodeTable = new ClassNodeTable(),
     final Skeletons skeletons = new Skeletons()
-]: pkg? clazz+ EOF ;
+]: pkg? (foreignType | clazz)* EOF ;
 
 pkg returns [
     SpecificationContext ownerSpecification
 ]: 'package' qualifiedName ';' ;
+
+foreignType returns [
+    SpecificationContext ownerSpecification
+]: 'foreign' qualifiedName ';' ;
 
 clazz returns [
     SpecificationContext ownerSpecification,
@@ -98,7 +101,7 @@ reference returns [
     ClazzContext clazzDestination,
     ChainContext ownerChain,
     ParameterContext parameterDestination,
-    ForeignType foreignTypeDestination,
+    ForeignTypeContext foreignTypeDestination,
     String normalizedText,
     String signature,
     final Parameters parameters = new Parameters()
