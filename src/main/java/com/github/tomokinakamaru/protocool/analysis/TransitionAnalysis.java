@@ -1,7 +1,7 @@
 package com.github.tomokinakamaru.protocool.analysis;
 
-import com.github.tomokinakamaru.protocool.automaton.Automaton;
-import com.github.tomokinakamaru.protocool.automaton.Transition;
+import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
+import com.github.tomokinakamaru.protocool.data.automaton.Transition;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ClazzContext;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ExpressionContext;
 

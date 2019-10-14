@@ -1,11 +1,11 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
-import static com.github.tomokinakamaru.protocool.automaton.State.INITIAL_NUMBER;
+import static com.github.tomokinakamaru.protocool.data.automaton.State.INITIAL_NUMBER;
 
 import com.github.tomokinakamaru.protocool.analysis.AutomatonAnalysis;
-import com.github.tomokinakamaru.protocool.automaton.Automaton;
-import com.github.tomokinakamaru.protocool.automaton.State;
-import com.github.tomokinakamaru.protocool.automaton.Transition;
+import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
+import com.github.tomokinakamaru.protocool.data.automaton.State;
+import com.github.tomokinakamaru.protocool.data.automaton.Transition;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ClazzContext;
 import java.util.ArrayList;
 import java.util.HashSet;

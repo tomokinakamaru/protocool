@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.automaton;
+package com.github.tomokinakamaru.protocool.data.automaton;
 
 import com.github.tomokinakamaru.fsa.AbstractAutomaton;
 import java.util.Set;

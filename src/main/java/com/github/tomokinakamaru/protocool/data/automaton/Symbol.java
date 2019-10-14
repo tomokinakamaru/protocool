@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.automaton;
+package com.github.tomokinakamaru.protocool.data.automaton;
 
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.MethodContext;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ReferenceContext;

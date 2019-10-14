@@ -1,7 +1,7 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
 import com.github.tomokinakamaru.protocool.analysis.Analysis;
-import com.github.tomokinakamaru.protocool.automaton.Automaton;
+import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ChainContext;
 import java.util.Collection;
 

@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.symboltable;
+package com.github.tomokinakamaru.protocool.data.symboltable;
 
 import java.util.LinkedHashMap;
 
