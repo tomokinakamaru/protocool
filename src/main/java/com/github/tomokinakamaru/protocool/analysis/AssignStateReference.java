@@ -1,7 +1,7 @@
 package com.github.tomokinakamaru.protocool.analysis;
 
 import com.github.tomokinakamaru.protocool.BadSpecification;
-import com.github.tomokinakamaru.protocool.TransitionAnalysis;
+import com.github.tomokinakamaru.protocool.analysis.abst.TransitionAnalysis;
 import com.github.tomokinakamaru.protocool.data.Automaton;
 import com.github.tomokinakamaru.protocool.data.Transition;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ClazzContext;

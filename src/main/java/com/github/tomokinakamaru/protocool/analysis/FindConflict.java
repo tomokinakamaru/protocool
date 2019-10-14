@@ -1,7 +1,7 @@
 package com.github.tomokinakamaru.protocool.analysis;
 
 import com.github.tomokinakamaru.protocool.BadSpecification;
-import com.github.tomokinakamaru.protocool.StateAnalysis;
+import com.github.tomokinakamaru.protocool.analysis.abst.StateAnalysis;
 import com.github.tomokinakamaru.protocool.data.Automaton;
 import com.github.tomokinakamaru.protocool.data.State;
 import com.github.tomokinakamaru.protocool.data.Transition;

@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool;
+package com.github.tomokinakamaru.protocool.analysis.abst;
 
 import com.github.tomokinakamaru.protocool.data.Automaton;
 import com.github.tomokinakamaru.protocool.data.State;

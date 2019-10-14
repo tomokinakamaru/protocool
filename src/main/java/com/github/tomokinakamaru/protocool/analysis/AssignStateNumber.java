@@ -2,7 +2,7 @@ package com.github.tomokinakamaru.protocool.analysis;
 
 import static com.github.tomokinakamaru.protocool.data.State.INITIAL_NUMBER;
 
-import com.github.tomokinakamaru.protocool.AutomatonAnalysis;
+import com.github.tomokinakamaru.protocool.analysis.abst.AutomatonAnalysis;
 import com.github.tomokinakamaru.protocool.data.Automaton;
 import com.github.tomokinakamaru.protocool.data.State;
 import com.github.tomokinakamaru.protocool.data.Transition;

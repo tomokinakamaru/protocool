@@ -1,6 +1,6 @@
 package com.github.tomokinakamaru.protocool.analysis;
 
-import com.github.tomokinakamaru.protocool.Analysis;
+import com.github.tomokinakamaru.protocool.analysis.abst.Analysis;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.SpecificationContext;
 import com.google.googlejavaformat.java.Formatter;
 import com.google.googlejavaformat.java.FormatterException;

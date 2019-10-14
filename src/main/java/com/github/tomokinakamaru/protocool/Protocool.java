@@ -34,6 +34,7 @@ import com.github.tomokinakamaru.protocool.analysis.GenerateMethodAstSkeleton;
 import com.github.tomokinakamaru.protocool.analysis.PropagateParameter;
 import com.github.tomokinakamaru.protocool.analysis.RemoveFinalStates;
 import com.github.tomokinakamaru.protocool.analysis.ResolveReference;
+import com.github.tomokinakamaru.protocool.analysis.abst.Analysis;
 import com.github.tomokinakamaru.protocool.parser.Lexer;
 import com.github.tomokinakamaru.protocool.parser.Parser;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.SpecificationContext;

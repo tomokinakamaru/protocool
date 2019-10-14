@@ -1,6 +1,6 @@
 package com.github.tomokinakamaru.protocool.analysis;
 
-import com.github.tomokinakamaru.protocool.AutomatonAnalysis;
+import com.github.tomokinakamaru.protocool.analysis.abst.AutomatonAnalysis;
 import com.github.tomokinakamaru.protocool.data.Automaton;
 import com.github.tomokinakamaru.protocool.data.Parameters;
 import com.github.tomokinakamaru.protocool.data.State;
