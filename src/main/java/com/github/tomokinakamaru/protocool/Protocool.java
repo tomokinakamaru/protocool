@@ -34,6 +34,8 @@ import com.github.tomokinakamaru.protocool.analysis.GenerateMethodAstSkeleton;
 import com.github.tomokinakamaru.protocool.analysis.PropagateParameter;
 import com.github.tomokinakamaru.protocool.analysis.RemoveFinalStates;
 import com.github.tomokinakamaru.protocool.analysis.ResolveReference;
+import com.github.tomokinakamaru.protocool.parser.Lexer;
+import com.github.tomokinakamaru.protocool.parser.Parser;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationLexer;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.SpecificationContext;
@@ -54,9 +56,7 @@ public class Protocool {
   }
 
   public static SpecificationContext parse(CharStream stream) {
-    SpecificationLexer lexer = new SpecificationLexer(stream);
-    SpecificationParser parser = new SpecificationParser(new CommonTokenStream(lexer));
-    return parser.specification();
+    return new Parser(new CommonTokenStream(new Lexer(stream))).specification();
   }
 
   private static List<Analysis> defaultProcesses() {
