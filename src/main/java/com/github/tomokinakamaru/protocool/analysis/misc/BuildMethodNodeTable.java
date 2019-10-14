@@ -1,7 +1,7 @@
 package com.github.tomokinakamaru.protocool.analysis.misc;
 
 import com.github.tomokinakamaru.protocool.analysis.Analysis;
-import com.github.tomokinakamaru.protocool.data.MethodNodeTable;
+import com.github.tomokinakamaru.protocool.analysis.data.MethodNodeTable;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.MethodContext;
 
 public class BuildMethodNodeTable extends Analysis {

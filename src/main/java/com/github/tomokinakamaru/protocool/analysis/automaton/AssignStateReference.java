@@ -1,8 +1,8 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
 import com.github.tomokinakamaru.protocool.analysis.TransitionAnalysis;
-import com.github.tomokinakamaru.protocool.data.Automaton;
-import com.github.tomokinakamaru.protocool.data.Transition;
+import com.github.tomokinakamaru.protocool.analysis.data.Automaton;
+import com.github.tomokinakamaru.protocool.analysis.data.Transition;
 import com.github.tomokinakamaru.protocool.exception.BadSpecification;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ClazzContext;
 

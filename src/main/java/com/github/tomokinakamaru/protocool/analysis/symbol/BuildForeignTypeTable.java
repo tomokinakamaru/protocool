@@ -1,7 +1,7 @@
 package com.github.tomokinakamaru.protocool.analysis.symbol;
 
 import com.github.tomokinakamaru.protocool.analysis.Analysis;
-import com.github.tomokinakamaru.protocool.data.ForeignType;
+import com.github.tomokinakamaru.protocool.analysis.data.ForeignType;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ReferenceContext;
 
 public class BuildForeignTypeTable extends Analysis {

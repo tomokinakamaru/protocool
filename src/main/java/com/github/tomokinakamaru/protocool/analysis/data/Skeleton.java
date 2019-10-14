@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.data;
+package com.github.tomokinakamaru.protocool.analysis.data;
 
 import java.io.IOException;
 import java.nio.file.Files;

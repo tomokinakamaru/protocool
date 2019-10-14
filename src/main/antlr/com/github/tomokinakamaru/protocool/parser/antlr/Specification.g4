@@ -10,7 +10,7 @@ grammar Specification;
 @parser::header {
     import java.nio.file.Path;
     import java.nio.file.Paths;
-    import com.github.tomokinakamaru.protocool.data.*;
+    import com.github.tomokinakamaru.protocool.analysis.data.*;
 }
 
 @parser::members {

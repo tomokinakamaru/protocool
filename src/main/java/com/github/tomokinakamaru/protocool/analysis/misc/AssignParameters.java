@@ -1,7 +1,7 @@
 package com.github.tomokinakamaru.protocool.analysis.misc;
 
 import com.github.tomokinakamaru.protocool.analysis.Analysis;
-import com.github.tomokinakamaru.protocool.data.Parameters;
+import com.github.tomokinakamaru.protocool.analysis.data.Parameters;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ChainContext;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.MethodContext;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ReferenceContext;

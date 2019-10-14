@@ -1,6 +1,6 @@
 package com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder;
 
-import com.github.tomokinakamaru.protocool.data.Parameters;
+import com.github.tomokinakamaru.protocool.analysis.data.Parameters;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ParameterContext;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ReferenceContext;
 import java.util.ArrayList;

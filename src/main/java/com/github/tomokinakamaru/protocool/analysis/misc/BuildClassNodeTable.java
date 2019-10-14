@@ -1,7 +1,7 @@
 package com.github.tomokinakamaru.protocool.analysis.misc;
 
 import com.github.tomokinakamaru.protocool.analysis.Analysis;
-import com.github.tomokinakamaru.protocool.data.ClassNodeTable;
+import com.github.tomokinakamaru.protocool.analysis.data.ClassNodeTable;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ChainContext;
 import java.util.LinkedHashSet;
 

@@ -2,9 +2,9 @@ package com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder;
 
 import static com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder.Utility.buildParameters;
 
-import com.github.tomokinakamaru.protocool.data.MethodNodeNames;
-import com.github.tomokinakamaru.protocool.data.MethodNodeTable;
-import com.github.tomokinakamaru.protocool.data.Parameters;
+import com.github.tomokinakamaru.protocool.analysis.data.MethodNodeNames;
+import com.github.tomokinakamaru.protocool.analysis.data.MethodNodeTable;
+import com.github.tomokinakamaru.protocool.analysis.data.Parameters;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ChainContext;
 import java.util.Set;
 

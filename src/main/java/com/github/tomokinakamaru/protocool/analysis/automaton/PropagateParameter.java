@@ -1,11 +1,11 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
 import com.github.tomokinakamaru.protocool.analysis.AutomatonAnalysis;
-import com.github.tomokinakamaru.protocool.data.Automaton;
-import com.github.tomokinakamaru.protocool.data.Parameters;
-import com.github.tomokinakamaru.protocool.data.State;
-import com.github.tomokinakamaru.protocool.data.Symbol;
-import com.github.tomokinakamaru.protocool.data.Transition;
+import com.github.tomokinakamaru.protocool.analysis.data.Automaton;
+import com.github.tomokinakamaru.protocool.analysis.data.Parameters;
+import com.github.tomokinakamaru.protocool.analysis.data.State;
+import com.github.tomokinakamaru.protocool.analysis.data.Symbol;
+import com.github.tomokinakamaru.protocool.analysis.data.Transition;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ClazzContext;
 import java.util.ArrayList;
 import java.util.List;

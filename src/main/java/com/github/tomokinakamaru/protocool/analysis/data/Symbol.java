@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.data;
+package com.github.tomokinakamaru.protocool.analysis.data;
 
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.MethodContext;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ReferenceContext;
