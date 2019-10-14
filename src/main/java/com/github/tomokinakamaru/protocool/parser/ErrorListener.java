@@ -7,13 +7,7 @@ import org.antlr.v4.runtime.Recognizer;
 public class ErrorListener extends BaseErrorListener {
 
   @Override
-  public void syntaxError(
-      Recognizer<?, ?> recognizer,
-      Object offendingSymbol,
-      int line,
-      int charPositionInLine,
-      String msg,
-      RecognitionException e) {
-    throw new RuntimeException(String.format("%s (L%dC%d)", msg, line, charPositionInLine));
+  public void syntaxError(Recognizer r, Object o, int l, int c, String m, RecognitionException e) {
+    throw new RuntimeException(String.format("%s (L%dC%d)", m, l, c));
   }
 }
