@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.skeleton;
+package com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder;
 
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.SpecificationContext;
 

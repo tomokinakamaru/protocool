@@ -1,6 +1,6 @@
-package com.github.tomokinakamaru.protocool.skeleton;
+package com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder;
 
-import static com.github.tomokinakamaru.protocool.skeleton.Utility.buildParameters;
+import static com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder.Utility.buildParameters;
 
 import com.github.tomokinakamaru.protocool.data.MethodNodeNames;
 import com.github.tomokinakamaru.protocool.data.MethodNodeTable;

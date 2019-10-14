@@ -1,11 +1,11 @@
 package com.github.tomokinakamaru.protocool.analysis.skeleton;
 
 import com.github.tomokinakamaru.protocool.analysis.StateAnalysis;
+import com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder.ApiBuilder;
 import com.github.tomokinakamaru.protocool.data.Automaton;
 import com.github.tomokinakamaru.protocool.data.Skeleton;
 import com.github.tomokinakamaru.protocool.data.State;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ClazzContext;
-import com.github.tomokinakamaru.protocool.skeleton.ApiBuilder;
 
 public class GenerateApiSkeleton extends StateAnalysis {
 

@@ -1,8 +1,8 @@
-package com.github.tomokinakamaru.protocool.skeleton;
+package com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder;
 
-import static com.github.tomokinakamaru.protocool.skeleton.Utility.buildParameters;
-import static com.github.tomokinakamaru.protocool.skeleton.Utility.getText;
-import static com.github.tomokinakamaru.protocool.skeleton.Utility.isNotLastItem;
+import static com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder.Utility.buildParameters;
+import static com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder.Utility.getText;
+import static com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder.Utility.isNotLastItem;
 
 import com.github.tomokinakamaru.protocool.data.Automaton;
 import com.github.tomokinakamaru.protocool.data.Parameters;

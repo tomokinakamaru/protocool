@@ -1,7 +1,7 @@
-package com.github.tomokinakamaru.protocool.skeleton;
+package com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder;
 
-import static com.github.tomokinakamaru.protocool.skeleton.Utility.buildParameters;
-import static com.github.tomokinakamaru.protocool.skeleton.Utility.getText;
+import static com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder.Utility.buildParameters;
+import static com.github.tomokinakamaru.protocool.analysis.skeleton.codebuilder.Utility.getText;
 
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ArgumentContext;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.MethodContext;
