@@ -59,7 +59,7 @@ check.dependsOn jacocoTestReport
 
 shadowJar {
     manifest.attributes(
-            'Main-Class' : "${project.group}.${rootProject.name}.cli.Main",
+            'Main-Class' : "${project.group}.${project.name}.cli.Main",
             'Version': "${project.version}"
     )
 }
