@@ -1,1 +1,3 @@
 rootProject.name = 'protocool'
+
+include 'generated'

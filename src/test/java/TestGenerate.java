@@ -15,7 +15,7 @@ import org.junit.jupiter.params.provider.MethodSource;
 
 final class TestGenerate {
 
-  private static final Path rootProject = Paths.get("").toAbsolutePath().getParent();
+  private static final Path rootProject = Paths.get("").toAbsolutePath();
 
   private static final Path outputDirectory =
       Paths.get(rootProject.toString(), "generated", "src", "main", "gen");
