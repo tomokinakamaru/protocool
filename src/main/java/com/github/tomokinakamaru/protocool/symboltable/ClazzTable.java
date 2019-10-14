@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.analysis.data;
+package com.github.tomokinakamaru.protocool.symboltable;
 
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.ClazzContext;
 

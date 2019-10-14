@@ -12,6 +12,10 @@ grammar Specification;
     import java.nio.file.Paths;
     import com.github.tomokinakamaru.protocool.analysis.data.*;
     import com.github.tomokinakamaru.protocool.automaton.Automaton;
+    import com.github.tomokinakamaru.protocool.symboltable.ClazzTable;
+    import com.github.tomokinakamaru.protocool.symboltable.ForeignTypeTable;
+    import com.github.tomokinakamaru.protocool.symboltable.ParameterTable;
+    import com.github.tomokinakamaru.protocool.entity.ForeignType;
 }
 
 @parser::members {
