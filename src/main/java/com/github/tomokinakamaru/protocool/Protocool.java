@@ -1,40 +1,40 @@
 package com.github.tomokinakamaru.protocool;
 
-import com.github.tomokinakamaru.protocool.analysis.AnnotateStatic;
-import com.github.tomokinakamaru.protocool.analysis.AssignEvaluator;
-import com.github.tomokinakamaru.protocool.analysis.AssignOwnerChain;
-import com.github.tomokinakamaru.protocool.analysis.AssignOwnerClazz;
-import com.github.tomokinakamaru.protocool.analysis.AssignOwnerSpecification;
-import com.github.tomokinakamaru.protocool.analysis.AssignPackage;
-import com.github.tomokinakamaru.protocool.analysis.AssignParameters;
-import com.github.tomokinakamaru.protocool.analysis.AssignStateNumber;
-import com.github.tomokinakamaru.protocool.analysis.AssignStateReference;
-import com.github.tomokinakamaru.protocool.analysis.BuildClassNodeBaseName;
-import com.github.tomokinakamaru.protocool.analysis.BuildClassNodeName;
-import com.github.tomokinakamaru.protocool.analysis.BuildClassNodeNameTable;
-import com.github.tomokinakamaru.protocool.analysis.BuildClassNodeTable;
-import com.github.tomokinakamaru.protocool.analysis.BuildClazzAutomaton;
-import com.github.tomokinakamaru.protocool.analysis.BuildClazzTable;
-import com.github.tomokinakamaru.protocool.analysis.BuildExpressionAutomaton;
-import com.github.tomokinakamaru.protocool.analysis.BuildForeignTypeTable;
-import com.github.tomokinakamaru.protocool.analysis.BuildMethodNodeBaseName;
-import com.github.tomokinakamaru.protocool.analysis.BuildMethodNodeName;
-import com.github.tomokinakamaru.protocool.analysis.BuildMethodNodeNameTable;
-import com.github.tomokinakamaru.protocool.analysis.BuildMethodNodeNames;
-import com.github.tomokinakamaru.protocool.analysis.BuildMethodNodeTable;
-import com.github.tomokinakamaru.protocool.analysis.BuildNormalizedText;
-import com.github.tomokinakamaru.protocool.analysis.BuildParameterTable;
-import com.github.tomokinakamaru.protocool.analysis.BuildSignature;
-import com.github.tomokinakamaru.protocool.analysis.FindConflict;
-import com.github.tomokinakamaru.protocool.analysis.FormatSkeleton;
-import com.github.tomokinakamaru.protocool.analysis.GenerateApiSkeleton;
-import com.github.tomokinakamaru.protocool.analysis.GenerateBaseFile;
-import com.github.tomokinakamaru.protocool.analysis.GenerateClassAstSkeleton;
-import com.github.tomokinakamaru.protocool.analysis.GenerateMethodAstSkeleton;
-import com.github.tomokinakamaru.protocool.analysis.PropagateParameter;
-import com.github.tomokinakamaru.protocool.analysis.RemoveFinalStates;
-import com.github.tomokinakamaru.protocool.analysis.ResolveReference;
-import com.github.tomokinakamaru.protocool.analysis.abst.Analysis;
+import com.github.tomokinakamaru.protocool.analysis.Analysis;
+import com.github.tomokinakamaru.protocool.analysis.automaton.AnnotateStatic;
+import com.github.tomokinakamaru.protocool.analysis.automaton.AssignEvaluator;
+import com.github.tomokinakamaru.protocool.analysis.automaton.AssignStateNumber;
+import com.github.tomokinakamaru.protocool.analysis.automaton.AssignStateReference;
+import com.github.tomokinakamaru.protocool.analysis.automaton.BuildClazzAutomaton;
+import com.github.tomokinakamaru.protocool.analysis.automaton.BuildExpressionAutomaton;
+import com.github.tomokinakamaru.protocool.analysis.automaton.FindConflict;
+import com.github.tomokinakamaru.protocool.analysis.automaton.PropagateParameter;
+import com.github.tomokinakamaru.protocool.analysis.automaton.RemoveFinalStates;
+import com.github.tomokinakamaru.protocool.analysis.misc.AssignPackage;
+import com.github.tomokinakamaru.protocool.analysis.misc.AssignParameters;
+import com.github.tomokinakamaru.protocool.analysis.misc.BuildClassNodeBaseName;
+import com.github.tomokinakamaru.protocool.analysis.misc.BuildClassNodeName;
+import com.github.tomokinakamaru.protocool.analysis.misc.BuildClassNodeNameTable;
+import com.github.tomokinakamaru.protocool.analysis.misc.BuildClassNodeTable;
+import com.github.tomokinakamaru.protocool.analysis.misc.BuildMethodNodeBaseName;
+import com.github.tomokinakamaru.protocool.analysis.misc.BuildMethodNodeName;
+import com.github.tomokinakamaru.protocool.analysis.misc.BuildMethodNodeNameTable;
+import com.github.tomokinakamaru.protocool.analysis.misc.BuildMethodNodeNames;
+import com.github.tomokinakamaru.protocool.analysis.misc.BuildMethodNodeTable;
+import com.github.tomokinakamaru.protocool.analysis.misc.BuildNormalizedText;
+import com.github.tomokinakamaru.protocool.analysis.misc.BuildSignature;
+import com.github.tomokinakamaru.protocool.analysis.skeleton.FormatSkeleton;
+import com.github.tomokinakamaru.protocool.analysis.skeleton.GenerateApiSkeleton;
+import com.github.tomokinakamaru.protocool.analysis.skeleton.GenerateBaseFile;
+import com.github.tomokinakamaru.protocool.analysis.skeleton.GenerateClassAstSkeleton;
+import com.github.tomokinakamaru.protocool.analysis.skeleton.GenerateMethodAstSkeleton;
+import com.github.tomokinakamaru.protocool.analysis.symbol.BuildClazzTable;
+import com.github.tomokinakamaru.protocool.analysis.symbol.BuildForeignTypeTable;
+import com.github.tomokinakamaru.protocool.analysis.symbol.BuildParameterTable;
+import com.github.tomokinakamaru.protocool.analysis.symbol.ResolveReference;
+import com.github.tomokinakamaru.protocool.analysis.syntax.AssignOwnerChain;
+import com.github.tomokinakamaru.protocool.analysis.syntax.AssignOwnerClazz;
+import com.github.tomokinakamaru.protocool.analysis.syntax.AssignOwnerSpecification;
 import com.github.tomokinakamaru.protocool.parser.Lexer;
 import com.github.tomokinakamaru.protocool.parser.Parser;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.SpecificationContext;
@@ -49,13 +49,11 @@ public class Protocool {
   public final List<Analysis> processes = new ArrayList<>(defaultProcesses());
 
   public SpecificationContext run(CharStream stream) {
-    SpecificationContext ctx = parse(stream);
+    Lexer lexer = new Lexer(stream);
+    Parser parser = new Parser(new CommonTokenStream(lexer));
+    SpecificationContext ctx = parser.specification();
     processes.forEach(p -> p.run(ctx));
     return ctx;
-  }
-
-  public static SpecificationContext parse(CharStream stream) {
-    return new Parser(new CommonTokenStream(new Lexer(stream))).specification();
   }
 
   private static List<Analysis> defaultProcesses() {
