@@ -1,7 +1,7 @@
 import static org.junit.jupiter.api.Assertions.assertThrows;
 
-import com.github.tomokinakamaru.protocool.BadSpecification;
 import com.github.tomokinakamaru.protocool.Protocool;
+import com.github.tomokinakamaru.protocool.exception.BadSpecification;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
