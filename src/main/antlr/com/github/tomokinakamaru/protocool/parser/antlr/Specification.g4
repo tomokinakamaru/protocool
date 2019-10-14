@@ -1,12 +1,5 @@
 grammar Specification;
 
-@lexer::members {
-    @Override
-    public void recover(RecognitionException e) {
-        throw new RuntimeException(e.getMessage());
-    }
-}
-
 @parser::header {
     import java.nio.file.Path;
     import java.nio.file.Paths;
@@ -15,13 +8,6 @@ grammar Specification;
     import com.github.tomokinakamaru.protocool.data.symboltable.ClazzTable;
     import com.github.tomokinakamaru.protocool.data.symboltable.ForeignTypeTable;
     import com.github.tomokinakamaru.protocool.data.symboltable.ParameterTable;
-}
-
-@parser::members {
-    @Override
-    public void notifyErrorListeners(Token t, String s, RecognitionException e) {
-        throw new RuntimeException(String.format("%s (L%dC%d)", s, t.getLine(), t.getCharPositionInLine()));
-    }
 }
 
 specification returns [
