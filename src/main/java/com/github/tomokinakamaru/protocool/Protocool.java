@@ -36,8 +36,6 @@ import com.github.tomokinakamaru.protocool.analysis.RemoveFinalStates;
 import com.github.tomokinakamaru.protocool.analysis.ResolveReference;
 import com.github.tomokinakamaru.protocool.parser.Lexer;
 import com.github.tomokinakamaru.protocool.parser.Parser;
-import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationLexer;
-import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser;
 import com.github.tomokinakamaru.protocool.parser.antlr.SpecificationParser.SpecificationContext;
 import java.util.ArrayList;
 import java.util.Arrays;
