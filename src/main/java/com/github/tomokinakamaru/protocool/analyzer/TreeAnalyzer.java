@@ -28,7 +28,7 @@ public abstract class TreeAnalyzer extends Analyzer implements GrammarListener {
 
   @Override
   public final void run() {
-    ParseTreeWalker.DEFAULT.walk(this, context.fileContext);
+    ParseTreeWalker.DEFAULT.walk(this, context.tree);
   }
 
   @Override

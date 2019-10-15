@@ -14,6 +14,6 @@ public class ParameterTableBuilder extends TreeAnalyzer {
 
   @Override
   public void enterParameter(ParameterContext ctx) {
-    context.parameterTables.get(context.classContexts.get(ctx)).put(ctx.name().getText(), ctx);
+    context.parameterTables.get(context.classScope.get(ctx)).put(ctx.name().getText(), ctx);
   }
 }

@@ -15,11 +15,11 @@ public class Context {
 
   public CharStream charStream;
 
-  public FileContext fileContext;
+  public FileContext tree;
 
-  public ParseTreeProperty<ClassContext> classContexts = new ParseTreeProperty<>();
+  public ParseTreeProperty<ClassContext> classScope = new ParseTreeProperty<>();
 
-  public ParseTreeProperty<ChainContext> chainContexts = new ParseTreeProperty<>();
+  public ParseTreeProperty<ChainContext> chainScope = new ParseTreeProperty<>();
 
   public ParseTreeProperty<ClassTable> classTables = new ParseTreeProperty<>();
 

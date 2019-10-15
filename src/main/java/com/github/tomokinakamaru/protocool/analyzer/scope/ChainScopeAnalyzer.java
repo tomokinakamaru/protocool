@@ -20,6 +20,6 @@ public class ChainScopeAnalyzer extends TreeAnalyzer {
 
   @Override
   public void enterEveryRule(ParserRuleContext ctx) {
-    context.chainContexts.put(ctx, chainContext);
+    context.chainScope.put(ctx, chainContext);
   }
 }

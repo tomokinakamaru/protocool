@@ -7,6 +7,6 @@ public class SyntaxAnalyzer extends Analyzer {
 
   @Override
   public void run() {
-    context.fileContext = new Parser(new CommonTokenStream(new Lexer(context.charStream))).file();
+    context.tree = new Parser(new CommonTokenStream(new Lexer(context.charStream))).file();
   }
 }

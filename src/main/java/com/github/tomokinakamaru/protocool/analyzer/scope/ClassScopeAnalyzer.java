@@ -20,6 +20,6 @@ public class ClassScopeAnalyzer extends TreeAnalyzer {
 
   @Override
   public void enterEveryRule(ParserRuleContext ctx) {
-    context.classContexts.put(ctx, classContext);
+    context.classScope.put(ctx, classContext);
   }
 }
