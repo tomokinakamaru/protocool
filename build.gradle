@@ -32,10 +32,13 @@ dependencies {
 }
 
 generateGrammarSource {
+    def srcPath = source.first().toPath()
+    def srcDir = projectDir.toPath().resolve("src").resolve("main").resolve("antlr")
+    def pkg = srcDir.relativize(srcPath.parent).toString().replace("/", ".")
     arguments = [
             '-visitor',
             '-listener',
-            '-package', "${project.group}.${project.name}.parser".toString()
+            '-package', "${pkg}".toString()
     ]
 }
 
@@ -61,8 +64,4 @@ shadowJar {
             'Main-Class' : "${project.group}.${project.name}.cli.Main",
             'Version': "${project.version}"
     )
-}
-
-googleJavaFormat {
-    exclude '**/generated-src/**'
 }
