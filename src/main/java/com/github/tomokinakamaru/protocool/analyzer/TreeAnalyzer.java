@@ -3,16 +3,16 @@ package com.github.tomokinakamaru.protocool.analyzer;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarListener;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ArgumentContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ChainContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.Class_Context;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ElementContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ExpressionContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.FactorContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.FileContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.Import_Context;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ImportContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.InterfacesContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.MethodContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.NameContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.Package_Context;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.PackageContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ParameterContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.QualifiedNameContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ReferenceContext;
@@ -38,22 +38,22 @@ public abstract class TreeAnalyzer extends Analyzer implements GrammarListener {
   public void exitFile(FileContext ctx) {}
 
   @Override
-  public void enterPackage_(Package_Context ctx) {}
+  public void enterPackage(PackageContext ctx) {}
 
   @Override
-  public void exitPackage_(Package_Context ctx) {}
+  public void exitPackage(PackageContext ctx) {}
 
   @Override
-  public void enterImport_(Import_Context ctx) {}
+  public void enterImport(ImportContext ctx) {}
 
   @Override
-  public void exitImport_(Import_Context ctx) {}
+  public void exitImport(ImportContext ctx) {}
 
   @Override
-  public void enterClass_(Class_Context ctx) {}
+  public void enterClass(ClassContext ctx) {}
 
   @Override
-  public void exitClass_(Class_Context ctx) {}
+  public void exitClass(ClassContext ctx) {}
 
   @Override
   public void enterSuperClass(SuperClassContext ctx) {}

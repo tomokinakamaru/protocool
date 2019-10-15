@@ -2,7 +2,7 @@ package com.github.tomokinakamaru.protocool.analyzer.automaton;
 
 import com.github.tomokinakamaru.protocool.analyzer.TreeAnalyzer;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ChainContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.Class_Context;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ClassContext;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 import com.github.tomokinakamaru.protocool.data.automaton.State;
 import com.github.tomokinakamaru.protocool.data.automaton.Symbol;
@@ -10,11 +10,11 @@ import com.github.tomokinakamaru.protocool.data.automaton.Symbol;
 public class ClassAutomatonBuilder extends TreeAnalyzer {
 
   @Override
-  public void enterClass_(Class_Context ctx) {
+  public void enterClass(ClassContext ctx) {
     context.automata.put(ctx, create(ctx));
   }
 
-  private Automaton create(Class_Context ctx) {
+  private Automaton create(ClassContext ctx) {
     return ctx.chain()
         .stream()
         .map(this::create)

@@ -1,20 +1,20 @@
 package com.github.tomokinakamaru.protocool.analyzer.scope;
 
 import com.github.tomokinakamaru.protocool.analyzer.TreeAnalyzer;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.Class_Context;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ClassContext;
 import org.antlr.v4.runtime.ParserRuleContext;
 
 public class ClassScopeAnalyzer extends TreeAnalyzer {
 
-  private Class_Context classContext;
+  private ClassContext classContext;
 
   @Override
-  public void enterClass_(Class_Context ctx) {
+  public void enterClass(ClassContext ctx) {
     classContext = ctx;
   }
 
   @Override
-  public void exitClass_(Class_Context ctx) {
+  public void exitClass(ClassContext ctx) {
     classContext = null;
   }
 

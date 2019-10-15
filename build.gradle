@@ -40,6 +40,28 @@ generateGrammarSource {
             '-listener',
             '-package', "${pkg}".toString()
     ]
+
+    doLast {
+        String outDir = outputDirectory.toString()
+
+        String tmpOutDir = outDir + '.tmp'
+
+        copy {
+            from outDir
+            into tmpOutDir
+            filter { line -> line
+                    .replaceAll('Class_', 'Class')
+                    .replaceAll('Package_', 'Package')
+                    .replaceAll('Import_', 'Import') }
+        }
+
+        copy {
+            from tmpOutDir
+            into outDir
+        }
+
+        delete tmpOutDir
+    }
 }
 
 test {

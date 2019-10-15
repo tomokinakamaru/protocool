@@ -1,7 +1,7 @@
 package com.github.tomokinakamaru.protocool;
 
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ChainContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.Class_Context;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.FileContext;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 import com.github.tomokinakamaru.protocool.data.symboltable.ClassTable;
@@ -17,7 +17,7 @@ public class Context {
 
   public FileContext fileContext;
 
-  public ParseTreeProperty<Class_Context> classContexts = new ParseTreeProperty<>();
+  public ParseTreeProperty<ClassContext> classContexts = new ParseTreeProperty<>();
 
   public ParseTreeProperty<ChainContext> chainContexts = new ParseTreeProperty<>();
 

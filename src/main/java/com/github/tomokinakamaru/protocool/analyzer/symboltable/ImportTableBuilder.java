@@ -2,7 +2,7 @@ package com.github.tomokinakamaru.protocool.analyzer.symboltable;
 
 import com.github.tomokinakamaru.protocool.analyzer.TreeAnalyzer;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.FileContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.Import_Context;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ImportContext;
 import com.github.tomokinakamaru.protocool.data.symboltable.ImportTable;
 
 public class ImportTableBuilder extends TreeAnalyzer {
@@ -13,7 +13,7 @@ public class ImportTableBuilder extends TreeAnalyzer {
   }
 
   @Override
-  public void enterImport_(Import_Context ctx) {
+  public void enterImport(ImportContext ctx) {
     context.importTables.get(context.fileContext).put(ctx.qualifiedName().getText(), ctx);
   }
 }
