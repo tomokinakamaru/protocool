@@ -6,13 +6,13 @@ package_: 'package' qualifiedName ';' ;
 
 import_: 'import' qualifiedName ';' ;
 
-class_: 'class' NAME ('<' parameter (',' parameter)* '>')? superClass? interfaces? '{' ((chain | parameter) ';')* '}' ;
+class_: 'class' name ('<' parameter (',' parameter)* '>')? superClass? interfaces? '{' ((chain | parameter) ';')* '}' ;
 
 superClass: 'extends' reference ;
 
 interfaces: 'implements' reference+ ;
 
-parameter: NAME ('extends' reference)? ;
+parameter: name ('extends' reference)? ;
 
 chain: STATIC? reference expression ('return' qualifiedName)? ;
 
@@ -24,15 +24,17 @@ factor: element (OPTIONAL | REPEAT0 | REPEAT1)? ;
 
 element: method | '(' expression ')';
 
-method: NAME '(' (argument (',' argument)*)? ')' ;
+method: name '(' (argument (',' argument)*)? ')' ;
 
-argument: reference ELLIPSIS? NAME ;
+argument: reference ELLIPSIS? name ;
 
 reference: qualifiedName ('<' (reference | wildcard) (',' (reference | wildcard))* '>')? ARRAY* ;
 
 wildcard: '?' (('extends' | SUPER) reference)?;
 
 qualifiedName: (NAME '.')* NAME ;
+
+name: NAME ;
 
 STATIC: 'static' ;
 
