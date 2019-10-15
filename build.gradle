@@ -33,8 +33,11 @@ dependencies {
 
 generateGrammarSource {
     def srcPath = source.first().toPath()
+
     def srcDir = projectDir.toPath().resolve("src").resolve("main").resolve("antlr")
+
     def pkg = srcDir.relativize(srcPath.parent).toString().replace("/", ".")
+
     arguments = [
             '-visitor',
             '-listener',
@@ -42,9 +45,9 @@ generateGrammarSource {
     ]
 
     doLast {
-        String outDir = outputDirectory.toString()
+        def outDir = outputDirectory.toString()
 
-        String tmpOutDir = outDir + '.tmp'
+        def tmpOutDir = outDir + '.tmp'
 
         copy {
             from outDir
