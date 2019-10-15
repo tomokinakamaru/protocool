@@ -1,4 +1,0 @@
-class StaticConflict {
-  static StaticConflict StaticConflict();
-  StaticConflict StaticConflict();
-}

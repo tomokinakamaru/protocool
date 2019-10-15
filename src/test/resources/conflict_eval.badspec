@@ -1,6 +1,0 @@
-class EvalConflict {
-  String evalConflict() by Evaluator.eval1;
-  String evalConflict() by Evaluator.eval2;
-}
-
-foreign String;
