@@ -1,9 +1,9 @@
 package com.github.tomokinakamaru.protocool.analyzer.symboltable;
 
 import com.github.tomokinakamaru.protocool.analyzer.TreeAnalyzer;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.FileContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.Import_Context;
 import com.github.tomokinakamaru.protocool.data.symboltable.ImportTable;
-import com.github.tomokinakamaru.protocool.parser.antlr.GrammarParser.FileContext;
-import com.github.tomokinakamaru.protocool.parser.antlr.GrammarParser.Import_Context;
 
 public class ImportTableBuilder extends TreeAnalyzer {
 

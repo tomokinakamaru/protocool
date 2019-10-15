@@ -1,9 +1,9 @@
 package com.github.tomokinakamaru.protocool.analyzer.reference;
 
 import com.github.tomokinakamaru.protocool.analyzer.TreeAnalyzer;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ReferenceContext;
 import com.github.tomokinakamaru.protocool.data.symboltable.ParameterTable;
 import com.github.tomokinakamaru.protocool.exception.UndefinedType;
-import com.github.tomokinakamaru.protocool.parser.antlr.GrammarParser.ReferenceContext;
 
 public class ReferenceResolver extends TreeAnalyzer {
 

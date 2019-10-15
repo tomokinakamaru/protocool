@@ -7,12 +7,10 @@ import com.github.tomokinakamaru.protocool.analyzer.scope.ClassScopeAnalyzer;
 import com.github.tomokinakamaru.protocool.analyzer.symboltable.ClassTableBuilder;
 import com.github.tomokinakamaru.protocool.analyzer.symboltable.ImportTableBuilder;
 import com.github.tomokinakamaru.protocool.analyzer.symboltable.ParameterTableBuilder;
-import com.github.tomokinakamaru.protocool.parser.Lexer;
-import com.github.tomokinakamaru.protocool.parser.Parser;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.SyntaxAnalyzer;
 import java.util.Arrays;
 import java.util.List;
 import org.antlr.v4.runtime.CharStream;
-import org.antlr.v4.runtime.CommonTokenStream;
 
 public class Protocool {
 
@@ -21,7 +19,6 @@ public class Protocool {
   public Context run(CharStream charStream) {
     Context context = new Context();
     context.charStream = charStream;
-    context.fileContext = new Parser(new CommonTokenStream(new Lexer(charStream))).file();
     analyzers.forEach(a -> a.context = context);
     analyzers.forEach(Analyzer::run);
     return context;
@@ -29,6 +26,7 @@ public class Protocool {
 
   private static List<Analyzer> defaultAnalyzers() {
     return Arrays.asList(
+        new SyntaxAnalyzer(),
         new ClassScopeAnalyzer(),
         new ChainScopeAnalyzer(),
         new ClassTableBuilder(),

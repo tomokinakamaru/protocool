@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.parser;
+package com.github.tomokinakamaru.protocool.analyzer.syntax;
 
 import org.antlr.v4.runtime.BaseErrorListener;
 import org.antlr.v4.runtime.RecognitionException;

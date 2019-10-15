@@ -1,7 +1,7 @@
 package com.github.tomokinakamaru.protocool.analyzer.scope;
 
 import com.github.tomokinakamaru.protocool.analyzer.TreeAnalyzer;
-import com.github.tomokinakamaru.protocool.parser.antlr.GrammarParser.ChainContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ChainContext;
 import org.antlr.v4.runtime.ParserRuleContext;
 
 public class ChainScopeAnalyzer extends TreeAnalyzer {

@@ -1,13 +1,13 @@
 package com.github.tomokinakamaru.protocool.analyzer.automaton;
 
 import com.github.tomokinakamaru.protocool.analyzer.TreeAnalyzer;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ElementContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ExpressionContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.FactorContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.MethodContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.TermContext;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 import com.github.tomokinakamaru.protocool.data.automaton.Symbol;
-import com.github.tomokinakamaru.protocool.parser.antlr.GrammarParser.ElementContext;
-import com.github.tomokinakamaru.protocool.parser.antlr.GrammarParser.ExpressionContext;
-import com.github.tomokinakamaru.protocool.parser.antlr.GrammarParser.FactorContext;
-import com.github.tomokinakamaru.protocool.parser.antlr.GrammarParser.MethodContext;
-import com.github.tomokinakamaru.protocool.parser.antlr.GrammarParser.TermContext;
 
 public class ChainAutomatonBuilder extends TreeAnalyzer {
 

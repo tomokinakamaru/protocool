@@ -1,6 +1,6 @@
-package com.github.tomokinakamaru.protocool.parser;
+package com.github.tomokinakamaru.protocool.analyzer.syntax;
 
-import com.github.tomokinakamaru.protocool.parser.antlr.GrammarLexer;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarLexer;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.ConsoleErrorListener;
 
