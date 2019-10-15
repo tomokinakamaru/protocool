@@ -38,11 +38,7 @@ generateGrammarSource {
 
     def pkg = srcDir.relativize(srcPath.parent).toString().replace("/", ".")
 
-    arguments = [
-            '-visitor',
-            '-listener',
-            '-package', "${pkg}".toString()
-    ]
+    arguments = ['-visitor', '-listener', '-package', "${pkg}".toString()]
 
     doLast {
         def outDir = outputDirectory.toString()
