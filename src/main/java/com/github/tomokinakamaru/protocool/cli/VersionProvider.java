@@ -5,9 +5,9 @@ import java.io.InputStream;
 import java.net.URL;
 import java.util.Enumeration;
 import java.util.jar.Manifest;
-import picocli.CommandLine;
+import picocli.CommandLine.IVersionProvider;
 
-final class VersionProvider implements CommandLine.IVersionProvider {
+final class VersionProvider implements IVersionProvider {
 
   private VersionProvider() {}
 
