@@ -11,6 +11,6 @@ public class SyntaxAnalyzer extends Analyzer {
     Lexer lexer = new Lexer(context.charStream);
     TokenStream stream = new CommonTokenStream(lexer);
     Parser parser = new Parser(stream);
-    context.tree = parser.specification();
+    context.specificationContext = parser.specification();
   }
 }

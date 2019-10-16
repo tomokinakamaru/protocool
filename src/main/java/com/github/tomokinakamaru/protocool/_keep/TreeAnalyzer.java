@@ -29,7 +29,7 @@ public abstract class TreeAnalyzer extends Analyzer implements SpecificationList
 
   @Override
   public final void run() {
-    ParseTreeWalker.DEFAULT.walk(this, context.tree);
+    ParseTreeWalker.DEFAULT.walk(this, context.specificationContext);
   }
 
   @Override

@@ -14,6 +14,6 @@ public class ClassTableBuilder extends TreeAnalyzer {
 
   @Override
   public void enterClass(ClassContext ctx) {
-    context.classTables.get(context.tree).put(ctx.name().getText(), ctx);
+    context.classTables.get(context.specificationContext).put(ctx.name().getText(), ctx);
   }
 }

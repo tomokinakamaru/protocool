@@ -14,6 +14,6 @@ public class ImportTableBuilder extends TreeAnalyzer {
 
   @Override
   public void enterImport(ImportContext ctx) {
-    context.importTables.get(context.tree).put(ctx.qualifiedName().getText(), ctx);
+    context.importTables.get(context.specificationContext).put(ctx.qualifiedName().getText(), ctx);
   }
 }
