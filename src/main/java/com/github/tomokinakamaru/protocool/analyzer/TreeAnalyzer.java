@@ -1,30 +1,30 @@
 package com.github.tomokinakamaru.protocool.analyzer;
 
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarListener;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ArgumentContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ChainContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ClassContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ElementContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ExpressionContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.FactorContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.FileContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ImportContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.InterfacesContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.MethodContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.NameContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.PackageContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ParameterContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.QualifiedNameContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.ReferenceContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.SuperClassContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.TermContext;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.GrammarParser.WildcardContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationListener;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ArgumentContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ChainContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ClassContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ElementContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ExpressionContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.FactorContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ImportContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.InterfacesContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.MethodContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.NameContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.PackageContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ParameterContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.QualifiedNameContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ReferenceContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.SpecificationContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.SuperClassContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.TermContext;
+import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.WildcardContext;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-public abstract class TreeAnalyzer extends Analyzer implements GrammarListener {
+public abstract class TreeAnalyzer extends Analyzer implements SpecificationListener {
 
   @Override
   public final void run() {
@@ -32,10 +32,10 @@ public abstract class TreeAnalyzer extends Analyzer implements GrammarListener {
   }
 
   @Override
-  public void enterFile(FileContext ctx) {}
+  public void enterSpecification(SpecificationContext ctx) {}
 
   @Override
-  public void exitFile(FileContext ctx) {}
+  public void exitSpecification(SpecificationContext ctx) {}
 
   @Override
   public void enterPackage(PackageContext ctx) {}

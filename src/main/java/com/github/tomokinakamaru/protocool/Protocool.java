@@ -16,12 +16,11 @@ public class Protocool {
 
   public final List<Analyzer> analyzers = defaultAnalyzers();
 
-  public Context run(CharStream charStream) {
-    Context context = new Context();
+  public void run(CharStream charStream) {
+    CompileContext context = new CompileContext();
     context.charStream = charStream;
     analyzers.forEach(a -> a.context = context);
     analyzers.forEach(Analyzer::run);
-    return context;
   }
 
   private static List<Analyzer> defaultAnalyzers() {
