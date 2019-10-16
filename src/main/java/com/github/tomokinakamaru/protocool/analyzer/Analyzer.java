@@ -1,10 +1,10 @@
 package com.github.tomokinakamaru.protocool.analyzer;
 
-import com.github.tomokinakamaru.protocool.CompileContext;
+import com.github.tomokinakamaru.protocool.Context;
 
 public abstract class Analyzer {
 
   public abstract void run();
 
-  public CompileContext context;
+  public Context context;
 }

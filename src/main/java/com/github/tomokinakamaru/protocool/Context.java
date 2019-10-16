@@ -11,7 +11,7 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.tree.ParseTreeProperty;
 
-public class CompileContext {
+public class Context {
 
   public CharStream charStream;
 

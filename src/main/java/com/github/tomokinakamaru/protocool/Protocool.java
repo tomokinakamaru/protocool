@@ -17,7 +17,7 @@ public class Protocool {
   public final List<Analyzer> analyzers = defaultAnalyzers();
 
   public void run(CharStream charStream) {
-    CompileContext context = new CompileContext();
+    Context context = new Context();
     context.charStream = charStream;
     analyzers.forEach(a -> a.context = context);
     analyzers.forEach(Analyzer::run);
