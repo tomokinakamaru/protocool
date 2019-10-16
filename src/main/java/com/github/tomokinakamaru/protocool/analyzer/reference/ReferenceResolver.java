@@ -3,7 +3,7 @@ package com.github.tomokinakamaru.protocool.analyzer.reference;
 import com.github.tomokinakamaru.protocool.analyzer.TreeAnalyzer;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ReferenceContext;
 import com.github.tomokinakamaru.protocool.data.symboltable.ParameterTable;
-import com.github.tomokinakamaru.protocool.exception.UndefinedType;
+import com.github.tomokinakamaru.protocool.error.symbol.UndefinedType;
 
 public class ReferenceResolver extends TreeAnalyzer {
 

@@ -9,8 +9,6 @@ import picocli.CommandLine.IVersionProvider;
 
 final class VersionProvider implements IVersionProvider {
 
-  private VersionProvider() {}
-
   @Override
   public String[] getVersion() {
     return new String[] {getManifest().getMainAttributes().getValue("Version")};

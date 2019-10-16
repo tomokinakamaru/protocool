@@ -1,6 +1,7 @@
 package com.github.tomokinakamaru.protocool.cli;
 
 import com.github.tomokinakamaru.protocool.Protocool;
+import com.github.tomokinakamaru.protocool.error.ExitCode;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;
@@ -11,10 +12,14 @@ import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.CharStreams;
 import picocli.CommandLine;
 
+@SuppressWarnings("DefaultAnnotationParam")
 @CommandLine.Command(
     name = "protocool",
     description = "Fluent API generator",
-    versionProvider = VersionProvider.class)
+    versionProvider = VersionProvider.class,
+    exitCodeOnSuccess = ExitCode.SUCCESS,
+    exitCodeOnExecutionException = ExitCode.UNKNOWN,
+    exitCodeOnInvalidInput = ExitCode.INVALID_USAGE)
 public final class Main implements Runnable {
 
   @CommandLine.Parameters(index = "0", description = "Input file")
@@ -43,6 +48,12 @@ public final class Main implements Runnable {
 
   public static void main(String[] args) {
     System.exit(new CommandLine(new Main()).execute(args));
+  }
+
+  public static int execute(String... args) {
+    return new CommandLine(new Main())
+        .setExitCodeExceptionMapper(new ExitCodeExceptionMapper())
+        .execute(args);
   }
 
   @Override
