@@ -9,6 +9,6 @@ public class Parser extends SpecificationParser {
   public Parser(TokenStream input) {
     super(input);
     removeErrorListener(ConsoleErrorListener.INSTANCE);
-    addErrorListener(new ErrorListener());
+    addErrorListener(new ParserErrorListener());
   }
 }

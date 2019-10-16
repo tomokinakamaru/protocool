@@ -9,6 +9,6 @@ public class Lexer extends SpecificationLexer {
   public Lexer(CharStream input) {
     super(input);
     removeErrorListener(ConsoleErrorListener.INSTANCE);
-    addErrorListener(new ErrorListener());
+    addErrorListener(new LexerErrorListener());
   }
 }
