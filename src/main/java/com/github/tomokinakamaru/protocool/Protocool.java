@@ -1,7 +1,6 @@
 package com.github.tomokinakamaru.protocool;
 
 import com.github.tomokinakamaru.protocool.analyzer.Analyzer;
-import com.github.tomokinakamaru.protocool.analyzer.reference.TableBuilder;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.SyntaxAnalyzer;
 import java.util.Arrays;
 import java.util.List;
@@ -19,6 +18,6 @@ public class Protocool {
   }
 
   private static List<Analyzer> defaultAnalyzers() {
-    return Arrays.asList(new SyntaxAnalyzer(), new TableBuilder());
+    return Arrays.asList(new SyntaxAnalyzer());
   }
 }
