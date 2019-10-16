@@ -1,9 +1,9 @@
-package com.github.tomokinakamaru.protocool.analyzer.reference;
+package com.github.tomokinakamaru.protocool._keep.reference;
 
-import com.github.tomokinakamaru.protocool.analyzer.TreeAnalyzer;
+import com.github.tomokinakamaru.protocool._keep.TreeAnalyzer;
+import com.github.tomokinakamaru.protocool._keep.data.symboltable.ParameterTable;
+import com.github.tomokinakamaru.protocool._keep.symbol.UndefinedType;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ReferenceContext;
-import com.github.tomokinakamaru.protocool.data.symboltable.ParameterTable;
-import com.github.tomokinakamaru.protocool.error.symbol.UndefinedType;
 
 public class ReferenceResolver extends TreeAnalyzer {
 

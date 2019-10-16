@@ -1,5 +1,6 @@
-package com.github.tomokinakamaru.protocool.analyzer;
+package com.github.tomokinakamaru.protocool._keep;
 
+import com.github.tomokinakamaru.protocool.analyzer.Analyzer;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationListener;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ArgumentContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ChainContext;

@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.error.symbol;
+package com.github.tomokinakamaru.protocool._keep.symbol;
 
 import com.github.tomokinakamaru.protocool.error.Error;
 

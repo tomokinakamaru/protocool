@@ -1,9 +1,9 @@
-package com.github.tomokinakamaru.protocool.analyzer.symboltable;
+package com.github.tomokinakamaru.protocool._keep.symboltable;
 
-import com.github.tomokinakamaru.protocool.analyzer.TreeAnalyzer;
+import com.github.tomokinakamaru.protocool._keep.TreeAnalyzer;
+import com.github.tomokinakamaru.protocool._keep.data.symboltable.ParameterTable;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ParameterContext;
-import com.github.tomokinakamaru.protocool.data.symboltable.ParameterTable;
 
 public class ParameterTableBuilder extends TreeAnalyzer {
 

@@ -1,11 +1,11 @@
-package com.github.tomokinakamaru.protocool.analyzer.automaton;
+package com.github.tomokinakamaru.protocool._keep.automaton;
 
-import com.github.tomokinakamaru.protocool.analyzer.TreeAnalyzer;
+import com.github.tomokinakamaru.protocool._keep.TreeAnalyzer;
+import com.github.tomokinakamaru.protocool._keep.data.automaton.Automaton;
+import com.github.tomokinakamaru.protocool._keep.data.automaton.State;
+import com.github.tomokinakamaru.protocool._keep.data.automaton.Symbol;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ChainContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ClassContext;
-import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
-import com.github.tomokinakamaru.protocool.data.automaton.State;
-import com.github.tomokinakamaru.protocool.data.automaton.Symbol;
 
 public class ClassAutomatonBuilder extends TreeAnalyzer {
 

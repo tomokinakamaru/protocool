@@ -1,7 +1,7 @@
 package com.github.tomokinakamaru.protocool.error;
 
-import com.github.tomokinakamaru.protocool.error.symbol.DuplicateType;
-import com.github.tomokinakamaru.protocool.error.symbol.UndefinedType;
+import com.github.tomokinakamaru.protocool._keep.symbol.DuplicateType;
+import com.github.tomokinakamaru.protocool._keep.symbol.UndefinedType;
 import com.github.tomokinakamaru.protocool.error.syntax.LexicalError;
 import com.github.tomokinakamaru.protocool.error.syntax.SyntacticalError;
 import java.util.HashMap;

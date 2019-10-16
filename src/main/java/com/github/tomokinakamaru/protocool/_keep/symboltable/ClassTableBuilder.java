@@ -1,9 +1,9 @@
-package com.github.tomokinakamaru.protocool.analyzer.symboltable;
+package com.github.tomokinakamaru.protocool._keep.symboltable;
 
-import com.github.tomokinakamaru.protocool.analyzer.TreeAnalyzer;
+import com.github.tomokinakamaru.protocool._keep.TreeAnalyzer;
+import com.github.tomokinakamaru.protocool._keep.data.symboltable.ClassTable;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.SpecificationContext;
-import com.github.tomokinakamaru.protocool.data.symboltable.ClassTable;
 
 public class ClassTableBuilder extends TreeAnalyzer {
 

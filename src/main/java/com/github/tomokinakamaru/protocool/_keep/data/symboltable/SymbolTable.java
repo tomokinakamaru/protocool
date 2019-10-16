@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.data.symboltable;
+package com.github.tomokinakamaru.protocool._keep.data.symboltable;
 
 import java.util.LinkedHashMap;
 import org.antlr.v4.runtime.ParserRuleContext;

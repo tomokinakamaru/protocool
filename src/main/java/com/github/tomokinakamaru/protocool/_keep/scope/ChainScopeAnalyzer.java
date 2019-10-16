@@ -1,6 +1,6 @@
-package com.github.tomokinakamaru.protocool.analyzer.scope;
+package com.github.tomokinakamaru.protocool._keep.scope;
 
-import com.github.tomokinakamaru.protocool.analyzer.TreeAnalyzer;
+import com.github.tomokinakamaru.protocool._keep.TreeAnalyzer;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ChainContext;
 import org.antlr.v4.runtime.ParserRuleContext;
 
