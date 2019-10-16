@@ -1,12 +1,7 @@
 package com.github.tomokinakamaru.protocool;
 
-import com.github.tomokinakamaru.protocool._keep.reference.ReferenceResolver;
-import com.github.tomokinakamaru.protocool._keep.scope.ChainScopeAnalyzer;
-import com.github.tomokinakamaru.protocool._keep.scope.ClassScopeAnalyzer;
-import com.github.tomokinakamaru.protocool._keep.symboltable.ClassTableBuilder;
-import com.github.tomokinakamaru.protocool._keep.symboltable.ImportTableBuilder;
-import com.github.tomokinakamaru.protocool._keep.symboltable.ParameterTableBuilder;
 import com.github.tomokinakamaru.protocool.analyzer.Analyzer;
+import com.github.tomokinakamaru.protocool.analyzer.reference.TableBuilder;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.SyntaxAnalyzer;
 import java.util.Arrays;
 import java.util.List;
@@ -24,13 +19,6 @@ public class Protocool {
   }
 
   private static List<Analyzer> defaultAnalyzers() {
-    return Arrays.asList(
-        new SyntaxAnalyzer(),
-        new ClassScopeAnalyzer(),
-        new ChainScopeAnalyzer(),
-        new ClassTableBuilder(),
-        new ImportTableBuilder(),
-        new ParameterTableBuilder(),
-        new ReferenceResolver());
+    return Arrays.asList(new SyntaxAnalyzer(), new TableBuilder());
   }
 }

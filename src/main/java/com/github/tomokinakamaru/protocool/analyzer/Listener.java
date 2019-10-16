@@ -1,6 +1,5 @@
-package com.github.tomokinakamaru.protocool._keep;
+package com.github.tomokinakamaru.protocool.analyzer;
 
-import com.github.tomokinakamaru.protocool.analyzer.Analyzer;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationListener;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ArgumentContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ChainContext;
@@ -25,7 +24,7 @@ import org.antlr.v4.runtime.tree.ErrorNode;
 import org.antlr.v4.runtime.tree.ParseTreeWalker;
 import org.antlr.v4.runtime.tree.TerminalNode;
 
-public abstract class TreeAnalyzer extends Analyzer implements SpecificationListener {
+public abstract class Listener extends Analyzer implements SpecificationListener {
 
   @Override
   public final void run() {

@@ -1,19 +1,19 @@
-package com.github.tomokinakamaru.protocool._keep.automaton;
+package com.github.tomokinakamaru.protocool.analyzer.automaton;
 
-import com.github.tomokinakamaru.protocool._keep.TreeAnalyzer;
-import com.github.tomokinakamaru.protocool._keep.data.automaton.Automaton;
-import com.github.tomokinakamaru.protocool._keep.data.automaton.Symbol;
+import com.github.tomokinakamaru.protocool.analyzer.Listener;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ElementContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ExpressionContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.FactorContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.MethodContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.TermContext;
+import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
+import com.github.tomokinakamaru.protocool.data.automaton.Symbol;
 
-public class ChainAutomatonBuilder extends TreeAnalyzer {
+public class ChainAutomatonBuilder extends Listener {
 
   @Override
   public void enterExpression(ExpressionContext ctx) {
-    context.automata.put(ctx, create(ctx));
+    // context.automata.put(ctx, create(ctx));
   }
 
   private Automaton create(ExpressionContext ctx) {

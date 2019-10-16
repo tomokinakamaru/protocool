@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool._keep.data.automaton;
+package com.github.tomokinakamaru.protocool.data.automaton;
 
 import com.github.tomokinakamaru.fsa.AbstractTransition;
 

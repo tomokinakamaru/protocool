@@ -1,17 +1,16 @@
-package com.github.tomokinakamaru.protocool._keep.automaton;
+package com.github.tomokinakamaru.protocool.analyzer.automaton;
 
-import com.github.tomokinakamaru.protocool._keep.TreeAnalyzer;
-import com.github.tomokinakamaru.protocool._keep.data.automaton.Automaton;
-import com.github.tomokinakamaru.protocool._keep.data.automaton.State;
-import com.github.tomokinakamaru.protocool._keep.data.automaton.Symbol;
+import com.github.tomokinakamaru.protocool.analyzer.Listener;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ChainContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ClassContext;
+import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
+import com.github.tomokinakamaru.protocool.data.automaton.State;
 
-public class ClassAutomatonBuilder extends TreeAnalyzer {
+public class ClassAutomatonBuilder extends Listener {
 
   @Override
   public void enterClass(ClassContext ctx) {
-    context.automata.put(ctx, create(ctx));
+    // context.automata.put(ctx, create(ctx));
   }
 
   private Automaton create(ClassContext ctx) {
@@ -24,7 +23,8 @@ public class ClassAutomatonBuilder extends TreeAnalyzer {
   }
 
   private Automaton create(ChainContext ctx) {
-    return context.automata.get(ctx.expression()).and(new Automaton(new Symbol(ctx.reference())));
+    return null; // context.automata.get(ctx.expression()).and(new Automaton(new
+    // Symbol(ctx.reference())));
   }
 
   private Automaton determinize(Automaton automaton) {

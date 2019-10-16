@@ -1,11 +1,10 @@
-package com.github.tomokinakamaru.protocool._keep.symbol;
+package com.github.tomokinakamaru.protocool.error.reference;
 
 import com.github.tomokinakamaru.protocool.error.Error;
-import java.util.stream.Stream;
 
 public class DuplicateType extends Error {
 
-  public DuplicateType(Stream name) {
+  public DuplicateType(String name) {
     super("Duplicate type: %s", name);
   }
 }
