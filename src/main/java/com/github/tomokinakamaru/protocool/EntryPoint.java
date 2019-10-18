@@ -2,9 +2,9 @@ package com.github.tomokinakamaru.protocool;
 
 import com.github.tomokinakamaru.picocli.utility.AbstractEntryPoint;
 import com.github.tomokinakamaru.picocli.utility.ExitCode;
-import com.github.tomokinakamaru.protocool.analyzer.error.DuplicateType;
-import com.github.tomokinakamaru.protocool.analyzer.error.ParseError;
-import com.github.tomokinakamaru.protocool.analyzer.error.UndefinedType;
+import com.github.tomokinakamaru.protocool.error.DuplicateType;
+import com.github.tomokinakamaru.protocool.error.ParseError;
+import com.github.tomokinakamaru.protocool.error.UndefinedType;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.InputStream;

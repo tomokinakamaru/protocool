@@ -1,8 +1,8 @@
-package com.github.tomokinakamaru.protocool.analyzer.data.typetable;
+package com.github.tomokinakamaru.protocool.data.typetable;
 
 import com.github.tomokinakamaru.antlr4.utility.AbstractSymbolTable;
-import com.github.tomokinakamaru.protocool.analyzer.error.DuplicateType;
-import com.github.tomokinakamaru.protocool.analyzer.error.UndefinedType;
+import com.github.tomokinakamaru.protocool.error.DuplicateType;
+import com.github.tomokinakamaru.protocool.error.UndefinedType;
 import java.util.function.Supplier;
 import org.antlr.v4.runtime.ParserRuleContext;
 

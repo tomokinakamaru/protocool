@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.analyzer.error;
+package com.github.tomokinakamaru.protocool.error;
 
 abstract class Error extends RuntimeException {
 

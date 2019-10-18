@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.analyzer.data.automaton;
+package com.github.tomokinakamaru.protocool.data.automaton;
 
 import org.antlr.v4.runtime.tree.ParseTreeProperty;
 

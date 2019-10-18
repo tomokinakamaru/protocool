@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.analyzer.data.typetable;
+package com.github.tomokinakamaru.protocool.data.typetable;
 
 import org.antlr.v4.runtime.tree.ParseTreeProperty;
 

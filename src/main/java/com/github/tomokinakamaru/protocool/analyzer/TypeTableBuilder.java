@@ -7,8 +7,8 @@ import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.Cl
 import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.FileContext;
 import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.ImportContext;
 import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.ParameterContext;
-import com.github.tomokinakamaru.protocool.analyzer.data.typetable.TypeTable;
-import com.github.tomokinakamaru.protocool.analyzer.data.typetable.TypeTables;
+import com.github.tomokinakamaru.protocool.data.typetable.TypeTable;
+import com.github.tomokinakamaru.protocool.data.typetable.TypeTables;
 
 public class TypeTableBuilder extends Listener {
 
