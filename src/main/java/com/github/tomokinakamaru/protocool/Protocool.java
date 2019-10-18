@@ -36,9 +36,9 @@ public class Protocool extends AbstractCompiler {
         new StoreReturnExpression(),
         new BuildClassAutomaton(),
         new PropagateParameter(),
+        new FindConflict(),
         new AssignStateReference(),
         new RemoveFinalState(),
-        new FindConflict(),
         new AssignStateNumber());
   }
 }
