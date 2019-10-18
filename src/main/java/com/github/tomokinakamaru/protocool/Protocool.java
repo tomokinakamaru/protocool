@@ -12,8 +12,7 @@ import com.github.tomokinakamaru.protocool.analysis.automaton.BuildClassAutomato
 import com.github.tomokinakamaru.protocool.analysis.automaton.FindConflict;
 import com.github.tomokinakamaru.protocool.analysis.automaton.PropagateParameter;
 import com.github.tomokinakamaru.protocool.analysis.automaton.RemoveFinalState;
-import com.github.tomokinakamaru.protocool.analysis.automaton.StoreReturnExpression;
-import com.github.tomokinakamaru.protocool.analysis.automaton.StoreStaticMethod;
+import com.github.tomokinakamaru.protocool.analysis.automaton.StoreChainAnnotation;
 import java.util.Arrays;
 import java.util.List;
 import org.antlr.v4.runtime.CharStream;
@@ -32,8 +31,7 @@ public class Protocool extends AbstractCompiler {
         new Parse(),
         new BuildTypeTable(),
         new BuildChainAutomaton(),
-        new StoreStaticMethod(),
-        new StoreReturnExpression(),
+        new StoreChainAnnotation(),
         new BuildClassAutomaton(),
         new PropagateParameter(),
         new FindConflict(),
