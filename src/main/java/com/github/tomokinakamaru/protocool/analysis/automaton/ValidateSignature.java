@@ -19,18 +19,11 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import org.antlr.v4.runtime.ParserRuleContext;
 
-public class FindConflict extends StateAnalyzer {
+public class ValidateSignature extends StateAnalyzer {
 
   @Override
   protected void analyze(ClassContext ctx, Automaton a, State s) {
     Set<Transition> transitions = a.getTransitionsFrom(s);
-
-    if (1 < transitions.size()) {
-      if (transitions.stream().anyMatch(t -> t.symbol.isReferenceContext())) {
-        throw new BadSpecification();
-      }
-    }
-
     for (Transition t1 : transitions) {
       String s1 = buildSignature(t1.symbol.asMethodContext());
       for (Transition t2 : transitions) {

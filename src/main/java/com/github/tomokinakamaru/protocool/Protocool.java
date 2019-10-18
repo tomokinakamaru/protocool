@@ -9,11 +9,12 @@ import com.github.tomokinakamaru.protocool.analysis.automaton.AssignStateNumber;
 import com.github.tomokinakamaru.protocool.analysis.automaton.AssignStateReference;
 import com.github.tomokinakamaru.protocool.analysis.automaton.BuildChainAutomaton;
 import com.github.tomokinakamaru.protocool.analysis.automaton.BuildClassAutomaton;
-import com.github.tomokinakamaru.protocool.analysis.automaton.FindConflict;
 import com.github.tomokinakamaru.protocool.analysis.automaton.PropagateParameter;
 import com.github.tomokinakamaru.protocool.analysis.automaton.RemoveFinalState;
 import com.github.tomokinakamaru.protocool.analysis.automaton.StoreReturnExpressions;
 import com.github.tomokinakamaru.protocool.analysis.automaton.StoreStaticMethods;
+import com.github.tomokinakamaru.protocool.analysis.automaton.ValidateReturnType;
+import com.github.tomokinakamaru.protocool.analysis.automaton.ValidateSignature;
 import java.util.Arrays;
 import java.util.List;
 import org.antlr.v4.runtime.CharStream;
@@ -36,7 +37,8 @@ public class Protocool extends AbstractCompiler {
         new StoreReturnExpressions(),
         new BuildClassAutomaton(),
         new PropagateParameter(),
-        new FindConflict(),
+        new ValidateSignature(),
+        new ValidateReturnType(),
         new AssignStateReference(),
         new RemoveFinalState(),
         new AssignStateNumber());
