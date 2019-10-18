@@ -2,12 +2,14 @@ package com.github.tomokinakamaru.protocool.analysis.abst;
 
 import com.github.tomokinakamaru.antlr4.utility.AbstractVisitor;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ArgumentContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.BodyContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ChainContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ElementContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ExpressionContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FactorContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FileContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.HeadContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ImportContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.InterfacesContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.MethodContext;
@@ -46,6 +48,16 @@ public abstract class Visitor<T> extends AbstractVisitor<T> implements Specifica
 
   @Override
   public T visitClass(ClassContext ctx) {
+    return null;
+  }
+
+  @Override
+  public T visitHead(HeadContext ctx) {
+    return null;
+  }
+
+  @Override
+  public T visitBody(BodyContext ctx) {
     return null;
   }
 

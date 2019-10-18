@@ -6,7 +6,11 @@ package_: 'package' qualifiedName ';' ;
 
 import_: 'import' qualifiedName ';' ;
 
-class_: 'class' name ('<' parameter (',' parameter)* '>')? superClass? interfaces? '{' ((chain | parameter) ';')* '}' ;
+class_: head body ;
+
+head: 'class' name ('<' parameter (',' parameter)* '>')? superClass? interfaces? ;
+
+body: '{' ((chain | parameter) ';')* '}' ;
 
 superClass: 'extends' reference ;
 
