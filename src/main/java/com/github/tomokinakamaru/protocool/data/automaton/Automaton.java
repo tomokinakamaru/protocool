@@ -28,12 +28,12 @@ public class Automaton extends AbstractAutomaton<State, Symbol, Transition, Auto
 
   @Override
   protected State newState(Set<State> states) {
-    return null;
+    return newState();
   }
 
   @Override
   protected State newState(State state) {
-    return null;
+    return newState();
   }
 
   @Override
