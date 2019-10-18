@@ -5,6 +5,7 @@ import static com.github.tomokinakamaru.antlr4.utility.NodeFinder.findParent;
 import com.github.tomokinakamaru.protocool.analysis.abst.Listener;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FileContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.HeadContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ImportContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ParameterContext;
 import com.github.tomokinakamaru.protocool.data.typetable.TypeTable;
@@ -29,7 +30,7 @@ public class BuildTypeTable extends Listener {
   }
 
   @Override
-  public void enterClass(ClassContext ctx) {
+  public void enterHead(HeadContext ctx) {
     rootTable.set(ctx.name().getText(), ctx);
     typeTables.put(ctx, rootTable.createChildScope());
   }
