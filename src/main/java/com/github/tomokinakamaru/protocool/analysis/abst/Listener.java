@@ -4,12 +4,14 @@ import com.github.tomokinakamaru.antlr4.utility.AbstractListener;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationListener;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ArgumentContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.BodyContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ChainContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ElementContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ExpressionContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FactorContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FileContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.HeadContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ImportContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.InterfacesContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.MethodContext;
@@ -55,16 +57,16 @@ public abstract class Listener extends AbstractListener implements Specification
   public void exitClass(ClassContext ctx) {}
 
   @Override
-  public void enterHead(SpecificationParser.HeadContext ctx) {}
+  public void enterHead(HeadContext ctx) {}
 
   @Override
-  public void exitHead(SpecificationParser.HeadContext ctx) {}
+  public void exitHead(HeadContext ctx) {}
 
   @Override
-  public void enterBody(SpecificationParser.BodyContext ctx) {}
+  public void enterBody(BodyContext ctx) {}
 
   @Override
-  public void exitBody(SpecificationParser.BodyContext ctx) {}
+  public void exitBody(BodyContext ctx) {}
 
   @Override
   public void enterSuperClass(SuperClassContext ctx) {}
