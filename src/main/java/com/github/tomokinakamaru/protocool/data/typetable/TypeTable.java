@@ -1,7 +1,8 @@
 package com.github.tomokinakamaru.protocool.data.typetable;
 
 import com.github.tomokinakamaru.antlr4.utility.AbstractSymbolTable;
-import com.github.tomokinakamaru.protocool.Error;
+import com.github.tomokinakamaru.protocool.error.DuplicateType;
+import com.github.tomokinakamaru.protocool.error.UndefinedType;
 import java.util.function.Supplier;
 import org.antlr.v4.runtime.ParserRuleContext;
 
@@ -14,11 +15,11 @@ public class TypeTable extends AbstractSymbolTable<TypeTable, ParserRuleContext>
 
   @Override
   protected ParserRuleContext resolveConflict(String k, ParserRuleContext o, ParserRuleContext n) {
-    throw new Error.DuplicateType(k);
+    throw new DuplicateType(k);
   }
 
   @Override
   protected ParserRuleContext defaultEntity(String key) {
-    throw new Error.UndefinedType(key);
+    throw new UndefinedType(key);
   }
 }
