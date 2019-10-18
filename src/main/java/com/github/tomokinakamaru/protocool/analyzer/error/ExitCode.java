@@ -1,7 +1,5 @@
-package com.github.tomokinakamaru.protocool.error;
+package com.github.tomokinakamaru.protocool.analyzer.error;
 
-import com.github.tomokinakamaru.protocool.error.syntax.LexicalError;
-import com.github.tomokinakamaru.protocool.error.syntax.SyntacticalError;
 import java.util.HashMap;
 import java.util.Map;
 
@@ -16,8 +14,7 @@ public class ExitCode {
   private static Map<Class<? extends Error>, Integer> map = new HashMap<>();
 
   static {
-    map.put(LexicalError.class, 101);
-    map.put(SyntacticalError.class, 102);
+    map.put(ParseError.class, 101);
   }
 
   public static int get(Class<? extends Throwable> c) {

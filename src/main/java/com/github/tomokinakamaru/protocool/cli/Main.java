@@ -1,7 +1,7 @@
 package com.github.tomokinakamaru.protocool.cli;
 
 import com.github.tomokinakamaru.protocool.Protocool;
-import com.github.tomokinakamaru.protocool.error.ExitCode;
+import com.github.tomokinakamaru.protocool.analyzer.error.ExitCode;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
 import java.io.IOException;

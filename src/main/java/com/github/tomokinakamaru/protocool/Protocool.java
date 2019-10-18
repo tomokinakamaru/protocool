@@ -1,23 +1,23 @@
 package com.github.tomokinakamaru.protocool;
 
-import com.github.tomokinakamaru.protocool.analyzer.Analyzer;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.SyntaxAnalyzer;
+import com.github.tomokinakamaru.antlr4utilities.AbstractAnalyzer;
+import com.github.tomokinakamaru.antlr4utilities.AbstractCompiler;
+import com.github.tomokinakamaru.antlr4utilities.Context;
+import com.github.tomokinakamaru.protocool.analyzer.Parser;
 import java.util.Arrays;
 import java.util.List;
 import org.antlr.v4.runtime.CharStream;
 
-public class Protocool {
-
-  public final List<Analyzer> analyzers = defaultAnalyzers();
+public class Protocool extends AbstractCompiler {
 
   public void run(CharStream charStream) {
     Context context = new Context();
-    context.charStream = charStream;
-    analyzers.forEach(a -> a.context = context);
-    analyzers.forEach(Analyzer::run);
+    context.set(charStream);
+    compile(context);
   }
 
-  private static List<Analyzer> defaultAnalyzers() {
-    return Arrays.asList(new SyntaxAnalyzer());
+  @Override
+  protected List<AbstractAnalyzer> analyses() {
+    return Arrays.asList(new Parser());
   }
 }

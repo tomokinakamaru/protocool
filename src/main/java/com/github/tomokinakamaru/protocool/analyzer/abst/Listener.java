@@ -1,5 +1,6 @@
-package com.github.tomokinakamaru.protocool.analyzer;
+package com.github.tomokinakamaru.protocool.analyzer.abst;
 
+import com.github.tomokinakamaru.antlr4utilities.AbstractListener;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationListener;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ArgumentContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ChainContext;
@@ -20,15 +21,12 @@ import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationPa
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.TermContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.WildcardContext;
 import org.antlr.v4.runtime.ParserRuleContext;
-import org.antlr.v4.runtime.tree.ErrorNode;
-import org.antlr.v4.runtime.tree.ParseTreeWalker;
-import org.antlr.v4.runtime.tree.TerminalNode;
 
-public abstract class Listener extends Analyzer implements SpecificationListener {
+public abstract class Listener extends AbstractListener implements SpecificationListener {
 
   @Override
-  public final void run() {
-    ParseTreeWalker.DEFAULT.walk(this, context.specificationContext);
+  protected Class<? extends ParserRuleContext> getContextClass() {
+    return SpecificationContext.class;
   }
 
   @Override
@@ -138,16 +136,4 @@ public abstract class Listener extends Analyzer implements SpecificationListener
 
   @Override
   public void exitName(NameContext ctx) {}
-
-  @Override
-  public void visitTerminal(TerminalNode node) {}
-
-  @Override
-  public void visitErrorNode(ErrorNode node) {}
-
-  @Override
-  public void enterEveryRule(ParserRuleContext ctx) {}
-
-  @Override
-  public void exitEveryRule(ParserRuleContext ctx) {}
 }
