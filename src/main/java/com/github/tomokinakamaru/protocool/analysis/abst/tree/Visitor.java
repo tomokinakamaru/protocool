@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.analysis.abst;
+package com.github.tomokinakamaru.protocool.analysis.abst.tree;
 
 import com.github.tomokinakamaru.antlr4.utility.AbstractVisitor;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ArgumentContext;

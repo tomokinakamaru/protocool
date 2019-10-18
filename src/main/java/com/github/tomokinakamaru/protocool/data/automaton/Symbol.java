@@ -2,16 +2,18 @@ package com.github.tomokinakamaru.protocool.data.automaton;
 
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.MethodContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ReferenceContext;
+import com.github.tomokinakamaru.protocool.data.NormalForms;
 import org.antlr.v4.runtime.ParserRuleContext;
 
 public class Symbol {
 
-  private ParserRuleContext context;
+  private final ParserRuleContext context;
 
-  public String normalizedText;
+  private final NormalForms normalForms;
 
-  public Symbol(ParserRuleContext ctx) {
+  public Symbol(ParserRuleContext ctx, NormalForms normalForms) {
     this.context = ctx;
+    this.normalForms = normalForms;
   }
 
   public boolean isMethodContext() {
@@ -32,7 +34,7 @@ public class Symbol {
 
   @Override
   public int hashCode() {
-    return normalizedText.hashCode();
+    return normalForms.get(context).hashCode();
   }
 
   @Override
@@ -41,6 +43,6 @@ public class Symbol {
       return false;
     }
     Symbol symbol = (Symbol) obj;
-    return normalizedText.equals(symbol.normalizedText);
+    return normalForms.get(context).equals(normalForms.get(symbol.context));
   }
 }

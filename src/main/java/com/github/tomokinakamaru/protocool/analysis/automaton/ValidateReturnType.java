@@ -1,6 +1,6 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
-import com.github.tomokinakamaru.protocool.analysis.abst.StateAnalyzer;
+import com.github.tomokinakamaru.protocool.analysis.abst.automaton.StateAnalyzer;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 import com.github.tomokinakamaru.protocool.data.automaton.State;

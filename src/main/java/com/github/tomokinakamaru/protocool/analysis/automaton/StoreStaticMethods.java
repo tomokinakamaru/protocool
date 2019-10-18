@@ -1,6 +1,6 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
-import com.github.tomokinakamaru.protocool.analysis.abst.AutomatonAnalyzer;
+import com.github.tomokinakamaru.protocool.analysis.abst.automaton.AutomatonAnalyzer;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ChainContext;
 import com.github.tomokinakamaru.protocool.data.StaticMethods;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;

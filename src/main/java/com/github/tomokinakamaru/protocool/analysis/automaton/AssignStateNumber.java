@@ -2,7 +2,7 @@ package com.github.tomokinakamaru.protocool.analysis.automaton;
 
 import static com.github.tomokinakamaru.protocool.data.automaton.State.INITIAL_NUMBER;
 
-import com.github.tomokinakamaru.protocool.analysis.abst.AutomatonAnalyzer;
+import com.github.tomokinakamaru.protocool.analysis.abst.automaton.AutomatonAnalyzer;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 import com.github.tomokinakamaru.protocool.data.automaton.State;

@@ -2,7 +2,7 @@ package com.github.tomokinakamaru.protocool.analysis.automaton;
 
 import static com.github.tomokinakamaru.antlr4.utility.NodeFinder.findParent;
 
-import com.github.tomokinakamaru.protocool.analysis.abst.AutomatonAnalyzer;
+import com.github.tomokinakamaru.protocool.analysis.abst.automaton.AutomatonAnalyzer;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationBaseVisitor;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.MethodContext;

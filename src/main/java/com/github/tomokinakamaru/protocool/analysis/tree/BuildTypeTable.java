@@ -1,8 +1,8 @@
-package com.github.tomokinakamaru.protocool.analysis;
+package com.github.tomokinakamaru.protocool.analysis.tree;
 
 import static com.github.tomokinakamaru.antlr4.utility.NodeFinder.findParent;
 
-import com.github.tomokinakamaru.protocool.analysis.abst.Listener;
+import com.github.tomokinakamaru.protocool.analysis.abst.tree.Listener;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FileContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.HeadContext;
