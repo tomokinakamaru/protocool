@@ -1,6 +1,6 @@
 grammar Specification;
 
-specification: package_? import_* class_* EOF ;
+file: package_? import_* class_* EOF ;
 
 package_: 'package' qualifiedName ';' ;
 

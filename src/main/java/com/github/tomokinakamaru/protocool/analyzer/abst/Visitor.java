@@ -1,19 +1,19 @@
 package com.github.tomokinakamaru.protocool.analyzer.abst;
 
 import com.github.tomokinakamaru.antlr4.utility.AbstractVisitor;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationVisitor;
+import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser;
+import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationVisitor;
 import org.antlr.v4.runtime.ParserRuleContext;
 
 public abstract class Visitor<T> extends AbstractVisitor<T> implements SpecificationVisitor<T> {
 
   @Override
   protected Class<? extends ParserRuleContext> getContextClass() {
-    return SpecificationParser.SpecificationContext.class;
+    return SpecificationParser.FileContext.class;
   }
 
   @Override
-  public T visitSpecification(SpecificationParser.SpecificationContext ctx) {
+  public T visitFile(SpecificationParser.FileContext ctx) {
     return null;
   }
 

@@ -1,8 +1,8 @@
 package com.github.tomokinakamaru.protocool.analyzer;
 
 import com.github.tomokinakamaru.antlr4.utility.AbstractParser;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationLexer;
-import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser;
+import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationLexer;
+import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser;
 import java.util.function.Function;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Lexer;
@@ -23,6 +23,6 @@ public class Parser extends AbstractParser<SpecificationParser> {
 
   @Override
   protected Function<SpecificationParser, ? extends ParserRuleContext> getRootContext() {
-    return SpecificationParser::specification;
+    return SpecificationParser::file;
   }
 }
