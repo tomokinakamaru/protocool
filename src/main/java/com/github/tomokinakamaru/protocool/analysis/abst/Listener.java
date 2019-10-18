@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.analysis.abst.tree;
+package com.github.tomokinakamaru.protocool.analysis.abst;
 
 import com.github.tomokinakamaru.antlr4.utility.AbstractListener;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationListener;

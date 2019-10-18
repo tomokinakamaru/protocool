@@ -1,6 +1,5 @@
-package com.github.tomokinakamaru.protocool.analysis.abst.automaton;
+package com.github.tomokinakamaru.protocool.analysis.abst;
 
-import com.github.tomokinakamaru.protocool.analysis.abst.tree.Listener;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ExpressionContext;
 import com.github.tomokinakamaru.protocool.data.automaton.Automata;

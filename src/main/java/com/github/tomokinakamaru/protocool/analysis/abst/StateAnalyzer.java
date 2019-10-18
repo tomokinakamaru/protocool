@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.analysis.abst.automaton;
+package com.github.tomokinakamaru.protocool.analysis.abst;
 
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ExpressionContext;
