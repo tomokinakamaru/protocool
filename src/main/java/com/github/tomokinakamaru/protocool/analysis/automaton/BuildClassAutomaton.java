@@ -6,7 +6,6 @@ import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.Cl
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ReferenceContext;
 import com.github.tomokinakamaru.protocool.data.automaton.Automata;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
-import com.github.tomokinakamaru.protocool.data.automaton.State;
 import com.github.tomokinakamaru.protocool.data.automaton.Symbol;
 
 public class BuildClassAutomaton extends Listener {
@@ -21,8 +20,8 @@ public class BuildClassAutomaton extends Listener {
         .stream()
         .map(this::create)
         .reduce(Automaton::or)
-        .map(this::determinize)
-        .orElse(emptyAutomaton());
+        .map(Automaton::minDet)
+        .orElse(Automaton.empty());
   }
 
   private Automaton create(ChainContext ctx) {
@@ -31,15 +30,5 @@ public class BuildClassAutomaton extends Listener {
 
   private Automaton create(ReferenceContext ctx) {
     return new Automaton(new Symbol(ctx));
-  }
-
-  private Automaton determinize(Automaton automaton) {
-    return automaton.repeated().determinized().repeated().determinized();
-  }
-
-  private Automaton emptyAutomaton() {
-    Automaton automaton = new Automaton();
-    automaton.initials.add(new State());
-    return automaton;
   }
 }
