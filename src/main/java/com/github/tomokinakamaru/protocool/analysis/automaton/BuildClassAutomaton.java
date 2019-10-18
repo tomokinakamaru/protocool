@@ -30,7 +30,7 @@ public class BuildClassAutomaton extends Listener {
   }
 
   private Automaton create(ChainContext ctx) {
-    return get(Automata.class).get(ctx.expression()).and(create(ctx.reference()));
+    return get(Automata.class).get(ctx).and(create(ctx.reference()));
   }
 
   private Automaton create(ReferenceContext ctx) {

@@ -1,6 +1,7 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
 import com.github.tomokinakamaru.protocool.analysis.abst.Listener;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ChainContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ElementContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ExpressionContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FactorContext;
@@ -10,7 +11,7 @@ import com.github.tomokinakamaru.protocool.data.automaton.Automata;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 import com.github.tomokinakamaru.protocool.data.automaton.Symbol;
 
-public class BuildExpressionAutomaton extends Listener {
+public class BuildChainAutomaton extends Listener {
 
   @Override
   public void init() {
@@ -18,8 +19,8 @@ public class BuildExpressionAutomaton extends Listener {
   }
 
   @Override
-  public void enterExpression(ExpressionContext ctx) {
-    get(Automata.class).put(ctx, create(ctx));
+  public void enterChain(ChainContext ctx) {
+    get(Automata.class).put(ctx, create(ctx.expression()));
   }
 
   private Automaton create(ExpressionContext ctx) {
@@ -27,6 +28,7 @@ public class BuildExpressionAutomaton extends Listener {
         .stream()
         .map(this::create)
         .reduce(Automaton::or)
+        .map(Automaton::minDet)
         .orElseThrow(RuntimeException::new);
   }
 
