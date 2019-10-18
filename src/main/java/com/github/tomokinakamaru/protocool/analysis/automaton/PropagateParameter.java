@@ -48,7 +48,7 @@ public class PropagateParameter extends AutomatonAnalyzer {
         srcSymParams.addAll(symParams);
 
         State dst = transition.destination;
-        if (dst.parameters != null) {
+        if (dst.hasParameters()) {
           if (!dst.parameters.equals(srcSymParams)) {
             if (symParams.isEmpty()) {
               dst.parameters = srcSymParams;
