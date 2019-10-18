@@ -5,6 +5,12 @@ import java.util.Set;
 
 public class Automaton extends AbstractAutomaton<State, Symbol, Transition, Automaton> {
 
+  public Automaton() {}
+
+  public Automaton(Symbol symbol) {
+    super(symbol);
+  }
+
   @Override
   protected State newState() {
     return new State();
