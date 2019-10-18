@@ -24,6 +24,7 @@ dependencies {
     antlr 'org.antlr:antlr4:4.7.2'
     implementation 'com.github.tomokinakamaru:fsa:f0f3c55655'
     implementation 'com.github.tomokinakamaru:antlr4-utilities:a0b878aec2'
+    implementation 'com.github.tomokinakamaru:picocli-utilities:9218c78728'
     implementation 'com.google.googlejavaformat:google-java-format:1.7'
     implementation 'info.picocli:picocli:4.0.4'
     testImplementation 'org.junit.jupiter:junit-jupiter-api:5.5.2'
@@ -82,7 +83,7 @@ check.dependsOn jacocoTestReport
 
 shadowJar {
     manifest.attributes(
-            'Main-Class' : "${project.group}.${project.name}.cli.Main",
+            'Main-Class' : "${project.group}.${project.name}.EntryPoint",
             'Version': "${project.version}"
     )
 }

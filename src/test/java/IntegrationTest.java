@@ -1,4 +1,4 @@
-import com.github.tomokinakamaru.protocool.cli.Main;
+import com.github.tomokinakamaru.protocool.EntryPoint;
 import java.io.IOException;
 import java.nio.file.Files;
 import java.nio.file.Path;
@@ -14,7 +14,7 @@ final class IntegrationTest {
   @ParameterizedTest
   @MethodSource("findGrammarFiles")
   void test(Path path) {
-    assert Main.execute(path.toString()) == 0;
+    assert EntryPoint.execute(path.toString()) == 0;
   }
 
   private static Stream<Path> findGrammarFiles() throws IOException {
