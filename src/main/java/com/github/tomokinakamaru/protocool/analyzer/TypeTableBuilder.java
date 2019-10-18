@@ -14,28 +14,24 @@ public class TypeTableBuilder extends Listener {
 
   private TypeTables typeTables;
 
-  private FileContext fileContext;
+  private TypeTable rootTable;
 
   @Override
   public void init() {
     typeTables = set(new TypeTables());
-    fileContext = get(FileContext.class);
-  }
-
-  @Override
-  public void enterFile(FileContext ctx) {
-    typeTables.put(ctx, new TypeTable());
+    rootTable = new TypeTable();
+    typeTables.put(get(FileContext.class), rootTable);
   }
 
   @Override
   public void enterImport(ImportContext ctx) {
-    typeTables.get(fileContext).set(ctx.qualifiedName().getText(), ctx);
+    rootTable.set(ctx.qualifiedName().getText(), ctx);
   }
 
   @Override
   public void enterClass(ClassContext ctx) {
-    typeTables.get(fileContext).set(ctx.name().getText(), ctx);
-    typeTables.put(ctx, typeTables.get(fileContext).createChildScope());
+    rootTable.set(ctx.name().getText(), ctx);
+    typeTables.put(ctx, rootTable.createChildScope());
   }
 
   @Override
