@@ -1,6 +1,7 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
 import com.github.tomokinakamaru.protocool.analysis.abst.Listener;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.BodyContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ChainContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ReferenceContext;
@@ -16,6 +17,10 @@ public class BuildClassAutomaton extends Listener {
   }
 
   private Automaton create(ClassContext ctx) {
+    return create(ctx.body());
+  }
+
+  private Automaton create(BodyContext ctx) {
     return ctx.chain()
         .stream()
         .map(this::create)
