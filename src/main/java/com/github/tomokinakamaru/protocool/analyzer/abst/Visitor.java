@@ -1,6 +1,6 @@
 package com.github.tomokinakamaru.protocool.analyzer.abst;
 
-import com.github.tomokinakamaru.antlr4utilities.AbstractVisitor;
+import com.github.tomokinakamaru.antlr4.utility.AbstractVisitor;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationVisitor;
 import org.antlr.v4.runtime.ParserRuleContext;

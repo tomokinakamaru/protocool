@@ -1,6 +1,6 @@
 package com.github.tomokinakamaru.protocool.analyzer;
 
-import com.github.tomokinakamaru.antlr4utilities.AbstractParser;
+import com.github.tomokinakamaru.antlr4.utility.AbstractParser;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationLexer;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser;
 import java.util.function.Function;

@@ -1,6 +1,6 @@
 package com.github.tomokinakamaru.protocool.analyzer.abst;
 
-import com.github.tomokinakamaru.antlr4utilities.AbstractListener;
+import com.github.tomokinakamaru.antlr4.utility.AbstractListener;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationListener;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ArgumentContext;
 import com.github.tomokinakamaru.protocool.analyzer.syntax.antlr.SpecificationParser.ChainContext;
