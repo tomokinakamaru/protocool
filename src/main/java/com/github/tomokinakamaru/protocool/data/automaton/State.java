@@ -14,8 +14,4 @@ public class State implements StateInterface {
   public ReferenceContext context;
 
   public Set<ParameterContext> parameters;
-
-  public boolean hasParameters() {
-    return parameters != null;
-  }
 }

@@ -28,7 +28,7 @@ public class BuildChainAutomaton extends Listener {
         .stream()
         .map(this::create)
         .reduce(Automaton::or)
-        .map(Automaton::minDet)
+        .map(Automaton::minDeterminized)
         .orElseThrow(RuntimeException::new);
   }
 

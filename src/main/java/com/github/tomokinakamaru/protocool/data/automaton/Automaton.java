@@ -11,13 +11,7 @@ public class Automaton extends AbstractAutomaton<State, Symbol, Transition, Auto
     super(symbol);
   }
 
-  public static Automaton empty() {
-    Automaton automaton = new Automaton();
-    automaton.initials.add(new State());
-    return automaton;
-  }
-
-  public Automaton minDet() {
+  public Automaton minDeterminized() {
     return repeated().determinized().repeated().determinized();
   }
 
