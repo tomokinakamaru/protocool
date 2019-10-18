@@ -1,16 +1,16 @@
-package com.github.tomokinakamaru.protocool.analyzer;
+package com.github.tomokinakamaru.protocool.analysis;
 
 import static com.github.tomokinakamaru.antlr4.utility.NodeFinder.findParent;
 
-import com.github.tomokinakamaru.protocool.analyzer.abst.Listener;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.ClassContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.FileContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.ImportContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.ParameterContext;
+import com.github.tomokinakamaru.protocool.analysis.abst.Listener;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FileContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ImportContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ParameterContext;
 import com.github.tomokinakamaru.protocool.data.typetable.TypeTable;
 import com.github.tomokinakamaru.protocool.data.typetable.TypeTables;
 
-public class TypeTableBuilder extends Listener {
+public class BuildTypeTable extends Listener {
 
   private TypeTables typeTables;
 

@@ -1,15 +1,15 @@
-package com.github.tomokinakamaru.protocool.analyzer;
+package com.github.tomokinakamaru.protocool.analysis;
 
 import com.github.tomokinakamaru.antlr4.utility.AbstractParser;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationLexer;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationLexer;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser;
 import java.util.function.Function;
 import org.antlr.v4.runtime.CharStream;
 import org.antlr.v4.runtime.Lexer;
 import org.antlr.v4.runtime.ParserRuleContext;
 import org.antlr.v4.runtime.TokenStream;
 
-public class Parser extends AbstractParser<SpecificationParser> {
+public class Parse extends AbstractParser<SpecificationParser> {
 
   @Override
   protected Function<CharStream, ? extends Lexer> newLexer() {

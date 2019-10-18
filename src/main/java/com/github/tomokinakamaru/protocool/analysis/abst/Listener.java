@@ -1,25 +1,25 @@
-package com.github.tomokinakamaru.protocool.analyzer.abst;
+package com.github.tomokinakamaru.protocool.analysis.abst;
 
 import com.github.tomokinakamaru.antlr4.utility.AbstractListener;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationListener;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.ArgumentContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.ChainContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.ClassContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.ElementContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.ExpressionContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.FactorContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.FileContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.ImportContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.InterfacesContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.MethodContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.NameContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.PackageContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.ParameterContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.QualifiedNameContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.ReferenceContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.SuperClassContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.TermContext;
-import com.github.tomokinakamaru.protocool.analyzer.antlr.SpecificationParser.WildcardContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationListener;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ArgumentContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ChainContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ElementContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ExpressionContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FactorContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FileContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ImportContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.InterfacesContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.MethodContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.NameContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.PackageContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ParameterContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.QualifiedNameContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ReferenceContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.SuperClassContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.TermContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.WildcardContext;
 import org.antlr.v4.runtime.ParserRuleContext;
 
 public abstract class Listener extends AbstractListener implements SpecificationListener {
