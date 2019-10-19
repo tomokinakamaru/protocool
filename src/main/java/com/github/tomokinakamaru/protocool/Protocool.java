@@ -16,16 +16,18 @@ import com.github.tomokinakamaru.protocool.analysis.tree.BuildChainAutomaton;
 import com.github.tomokinakamaru.protocool.analysis.tree.BuildClassAutomaton;
 import com.github.tomokinakamaru.protocool.analysis.tree.BuildNormalForm;
 import com.github.tomokinakamaru.protocool.analysis.tree.BuildTypeTable;
+import com.github.tomokinakamaru.protocool.data.skeleton.Skeletons;
 import java.util.Arrays;
 import java.util.List;
 import org.antlr.v4.runtime.CharStream;
 
 public class Protocool extends AbstractCompiler {
 
-  public void run(CharStream charStream) {
+  public Skeletons run(CharStream charStream) {
     Context context = new Context();
     context.set(charStream);
     compile(context);
+    return context.get(Skeletons.class);
   }
 
   @Override
