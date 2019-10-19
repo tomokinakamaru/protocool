@@ -4,6 +4,8 @@ import com.github.tomokinakamaru.picocli.utility.AbstractEntryPoint;
 import com.github.tomokinakamaru.picocli.utility.ExitCode;
 import com.github.tomokinakamaru.protocool.error.DuplicateType;
 import com.github.tomokinakamaru.protocool.error.ParseError;
+import com.github.tomokinakamaru.protocool.error.ReturnTypeConflict;
+import com.github.tomokinakamaru.protocool.error.SignatureConflict;
 import com.github.tomokinakamaru.protocool.error.UndefinedType;
 import java.io.FileInputStream;
 import java.io.FileNotFoundException;
@@ -28,6 +30,8 @@ public final class EntryPoint extends AbstractEntryPoint {
     ExitCode.set(ParseError.class, 101);
     ExitCode.set(DuplicateType.class, 102);
     ExitCode.set(UndefinedType.class, 103);
+    ExitCode.set(ReturnTypeConflict.class, 104);
+    ExitCode.set(SignatureConflict.class, 105);
   }
 
   private EntryPoint() {}

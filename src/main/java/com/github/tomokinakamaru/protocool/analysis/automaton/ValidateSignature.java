@@ -13,7 +13,7 @@ import com.github.tomokinakamaru.protocool.data.automaton.State;
 import com.github.tomokinakamaru.protocool.data.automaton.Transition;
 import com.github.tomokinakamaru.protocool.data.typetable.TypeTable;
 import com.github.tomokinakamaru.protocool.data.typetable.TypeTables;
-import com.github.tomokinakamaru.protocool.error.BadSpecification;
+import com.github.tomokinakamaru.protocool.error.SignatureConflict;
 import java.util.List;
 import java.util.Set;
 import java.util.stream.Collectors;
@@ -29,7 +29,7 @@ public class ValidateSignature extends StateAnalyzer {
       for (Transition t2 : transitions) {
         String s2 = buildSignature(t2.symbol.asMethodContext());
         if (t1 != t2 && s1.equals(s2)) {
-          throw new BadSpecification();
+          throw new SignatureConflict(s1);
         }
       }
     }
