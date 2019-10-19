@@ -40,10 +40,10 @@ public class Protocool extends AbstractCompiler {
         new BuildNormalForm(),
         new BuildClassAutomaton(),
         new PropagateParameter(),
-        new ValidateSignature(),
         new ValidateReturnType(),
         new AssignStateReference(),
         new RemoveFinalState(),
+        new ValidateSignature(),
         new AssignStateNumber());
   }
 }

@@ -42,7 +42,7 @@ public class ValidateSignature extends StateAnalyzer {
 
   private String buildSignature(List<ArgumentContext> lst, TypeTable table) {
     return lst.stream()
-        .map(a -> table.get(a.name().getText()))
+        .map(a -> table.get(a.reference().qualifiedName().getText()))
         .map(this::buildSignature)
         .collect(Collectors.joining(","));
   }
