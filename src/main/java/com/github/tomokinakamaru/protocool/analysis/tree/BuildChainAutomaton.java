@@ -1,12 +1,12 @@
 package com.github.tomokinakamaru.protocool.analysis.tree;
 
 import com.github.tomokinakamaru.protocool.analysis.abst.tree.Listener;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ChainContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ElementContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ExpressionContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FactorContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.MethodContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.TermContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ChainContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ElementContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ExpressionContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.FactorContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.MethodContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.TermContext;
 import com.github.tomokinakamaru.protocool.data.NormalForms;
 import com.github.tomokinakamaru.protocool.data.automaton.Automata;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;

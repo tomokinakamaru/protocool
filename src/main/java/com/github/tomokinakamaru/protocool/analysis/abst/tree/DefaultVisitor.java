@@ -1,28 +1,28 @@
 package com.github.tomokinakamaru.protocool.analysis.abst.tree;
 
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ArgumentContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.BodyContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ChainContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ElementContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ExpressionContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FactorContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FileContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.HeadContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ImportContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.InterfacesContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.MethodContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.NameContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.PackageContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ParameterContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.QualifiedNameContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ReferenceContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.SuperClassContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.TermContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.WildcardContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationVisitor;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ArgumentContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.BodyContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ChainContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ClassContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ElementContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ExpressionContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.FactorContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.FileContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.HeadContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ImportContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.InterfacesContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.MethodContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.NameContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.PackageContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ParameterContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.QualifiedNameContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ReferenceContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.SuperClassContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.TermContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.WildcardContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarVisitor;
 
-public interface DefaultVisitor<T> extends SpecificationVisitor<T> {
+public interface DefaultVisitor<T> extends GrammarVisitor<T> {
 
   default T visitFile(FileContext ctx) {
     return visitChildren(ctx);

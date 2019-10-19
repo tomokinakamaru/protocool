@@ -1,8 +1,8 @@
 package com.github.tomokinakamaru.protocool.data.automaton;
 
 import com.github.tomokinakamaru.fsa.StateInterface;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ParameterContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ReferenceContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ParameterContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ReferenceContext;
 import java.util.Set;
 
 public class State implements StateInterface {

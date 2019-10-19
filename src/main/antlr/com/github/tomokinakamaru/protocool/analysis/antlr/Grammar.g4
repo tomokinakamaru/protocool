@@ -1,4 +1,4 @@
-grammar Specification;
+grammar Grammar;
 
 file: package_? import_* class_* EOF ;
 

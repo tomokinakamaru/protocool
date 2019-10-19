@@ -1,6 +1,6 @@
 package com.github.tomokinakamaru.protocool.analysis;
 
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ClassContext;
 import org.antlr.v4.runtime.ParserRuleContext;
 
 public final class Utility {
