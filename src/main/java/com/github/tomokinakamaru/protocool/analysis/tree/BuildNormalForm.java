@@ -20,18 +20,9 @@ public class BuildNormalForm extends Listener {
   }
 
   @Override
-  public void enterMethod(MethodContext ctx) {
-    super.enterMethod(ctx);
-  }
-
-  @Override
-  public void enterReference(ReferenceContext ctx) {
-    super.enterReference(ctx);
-  }
-
-  @Override
   public void enterChain(ChainContext ctx) {
-    get(NormalForms.class).put(ctx, stringify(ctx.reference()));
+    ReferenceContext c = ctx.reference();
+    get(NormalForms.class).put(c, stringify(c));
   }
 
   @Override
