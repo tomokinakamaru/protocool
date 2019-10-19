@@ -28,6 +28,11 @@ final class IntegrationTest {
 
   @BeforeAll
   private static void clean() throws IOException {
-    Files.walk(outputDir).sorted(Comparator.reverseOrder()).map(Path::toFile).forEach(File::delete);
+    if (outputDir.toFile().exists()) {
+      Files.walk(outputDir)
+          .sorted(Comparator.reverseOrder())
+          .map(Path::toFile)
+          .forEach(File::delete);
+    }
   }
 }

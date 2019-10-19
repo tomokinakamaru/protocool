@@ -8,24 +8,19 @@ import com.github.tomokinakamaru.protocool.data.automaton.State;
 
 public abstract class StateClassBuilder extends StateAnalyzer {
 
-  private ClassContext classContext;
+  protected ClassContext ctx;
 
-  private State state;
+  protected State state;
+
+  protected abstract void prepare();
 
   protected abstract void build();
 
-  protected ClassContext getClassContext() {
-    return classContext;
-  }
-
-  protected State getState() {
-    return state;
-  }
-
   @Override
   protected final void analyze(ClassContext ctx, Automaton a, State s) {
-    classContext = ctx;
-    state = s;
+    this.ctx = ctx;
+    this.state = s;
+    prepare();
     build();
   }
 

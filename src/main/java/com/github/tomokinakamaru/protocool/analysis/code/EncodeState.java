@@ -9,7 +9,11 @@ import com.github.tomokinakamaru.protocool.data.StateClasses;
 
 public class EncodeState extends StateClassBuilder {
 
-  private ClassOrInterfaceDeclaration clazz;
+  private CompilationUnit unit;
+
+  private ClassOrInterfaceDeclaration decl;
+
+  private static final String STATE_NAME_FORMAT = "State%d";
 
   @Override
   public void initialize() {
@@ -17,17 +21,23 @@ public class EncodeState extends StateClassBuilder {
   }
 
   @Override
-  protected void build() {
-    CompilationUnit unit = new CompilationUnit();
-    clazz = unit.addClass(buildClassName());
-    get(StateClasses.class).put(getState(), unit);
+  protected void prepare() {
+    unit = new CompilationUnit();
+    decl = new ClassOrInterfaceDeclaration();
+    unit.addType(decl);
+    get(StateClasses.class).put(state, unit);
   }
 
-  private String buildClassName() {
-    if (getState().number == INITIAL_NUMBER) {
-      return getClassContext().head().name().getText();
+  @Override
+  protected void build() {
+    buildClassName();
+  }
+
+  private void buildClassName() {
+    if (state.number == INITIAL_NUMBER) {
+      decl.setName(ctx.head().name().getText());
     } else {
-      return "State" + getState().number;
+      decl.setName(String.format(STATE_NAME_FORMAT, state.number));
     }
   }
 }
