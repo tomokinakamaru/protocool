@@ -14,7 +14,7 @@ final class IntegrationTest {
   @ParameterizedTest
   @MethodSource("findGrammarFiles")
   void test(Path path) {
-    assert EntryPoint.execute(path.toString()) == 0;
+    assert EntryPoint.execute(path.toString(), "-o", "build/protocool") == 0;
   }
 
   private static Stream<Path> findGrammarFiles() throws IOException {

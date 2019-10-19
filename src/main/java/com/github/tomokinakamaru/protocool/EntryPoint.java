@@ -2,6 +2,7 @@ package com.github.tomokinakamaru.protocool;
 
 import com.github.tomokinakamaru.picocli.utility.AbstractEntryPoint;
 import com.github.tomokinakamaru.picocli.utility.ExitCode;
+import com.github.tomokinakamaru.protocool.data.skeleton.Skeletons;
 import com.github.tomokinakamaru.protocool.error.DuplicateType;
 import com.github.tomokinakamaru.protocool.error.ParseError;
 import com.github.tomokinakamaru.protocool.error.ReturnTypeConflict;
@@ -46,7 +47,8 @@ public final class EntryPoint extends AbstractEntryPoint {
 
   @Override
   protected void main() throws Exception {
-    new Protocool().run(CharStreams.fromStream(getInputStream()));
+    Skeletons skeletons = new Protocool().run(CharStreams.fromStream(getInputStream()));
+    skeletons.save(outputDirectory);
   }
 
   private InputStream getInputStream() throws FileNotFoundException {

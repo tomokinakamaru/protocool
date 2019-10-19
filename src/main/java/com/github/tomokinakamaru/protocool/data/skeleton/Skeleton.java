@@ -12,6 +12,8 @@ public class Skeleton {
   public CompilationUnit compilationUnit;
 
   public void save(Path directory) throws IOException {
-    Files.write(directory.resolve(path), compilationUnit.toString().getBytes());
+    Path p = directory.resolve(path);
+    Files.createDirectories(p.getParent());
+    Files.write(p, compilationUnit.toString().getBytes());
   }
 }
