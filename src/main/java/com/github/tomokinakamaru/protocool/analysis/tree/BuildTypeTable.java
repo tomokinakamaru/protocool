@@ -1,9 +1,8 @@
 package com.github.tomokinakamaru.protocool.analysis.tree;
 
-import static com.github.tomokinakamaru.antlr4.utility.NodeFinder.findParent;
+import static com.github.tomokinakamaru.protocool.analysis.Utility.findClassContext;
 
 import com.github.tomokinakamaru.protocool.analysis.abst.tree.Listener;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FileContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.HeadContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ImportContext;
@@ -37,6 +36,6 @@ public class BuildTypeTable extends Listener {
 
   @Override
   public void enterParameter(ParameterContext ctx) {
-    typeTables.get(findParent(ClassContext.class, ctx)).set(ctx.name().getText(), ctx);
+    typeTables.get(findClassContext(ctx)).set(ctx.name().getText(), ctx);
   }
 }

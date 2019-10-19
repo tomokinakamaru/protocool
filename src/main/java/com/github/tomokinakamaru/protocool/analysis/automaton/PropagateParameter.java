@@ -1,6 +1,6 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
-import static com.github.tomokinakamaru.antlr4.utility.NodeFinder.findParent;
+import static com.github.tomokinakamaru.protocool.analysis.Utility.findClassContext;
 
 import com.github.tomokinakamaru.protocool.analysis.abst.automaton.AutomatonAnalyzer;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationBaseVisitor;
@@ -88,7 +88,7 @@ public class PropagateParameter extends AutomatonAnalyzer {
 
     @Override
     public Stream<ParameterContext> visitReference(ReferenceContext ctx) {
-      TypeTable table = get(TypeTables.class).get(findParent(ClassContext.class, ctx));
+      TypeTable table = get(TypeTables.class).get(findClassContext(ctx));
       ParserRuleContext c = table.get(ctx.qualifiedName().getText());
       if (c instanceof ParameterContext) {
         return Stream.concat(Stream.of((ParameterContext) c), visitChildren(ctx));
