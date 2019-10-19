@@ -3,10 +3,8 @@ package com.github.tomokinakamaru.protocool.analysis.tree;
 import static com.github.tomokinakamaru.protocool.analysis.Utility.findClassContext;
 
 import com.github.tomokinakamaru.protocool.analysis.abst.tree.Listener;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FileContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.HeadContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ImportContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ParameterContext;
 import com.github.tomokinakamaru.protocool.data.typetable.TypeTable;
