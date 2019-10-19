@@ -1,28 +1,19 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
-import static com.github.tomokinakamaru.protocool.analysis.Utility.findClassContext;
-
 import com.github.tomokinakamaru.protocool.analysis.abst.automaton.AutomatonAnalyzer;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationBaseVisitor;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.MethodContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ParameterContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ReferenceContext;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 import com.github.tomokinakamaru.protocool.data.automaton.State;
 import com.github.tomokinakamaru.protocool.data.automaton.Symbol;
 import com.github.tomokinakamaru.protocool.data.automaton.Transition;
-import com.github.tomokinakamaru.protocool.data.typetable.TypeTable;
-import com.github.tomokinakamaru.protocool.data.typetable.TypeTables;
 import java.util.ArrayList;
 import java.util.LinkedHashSet;
 import java.util.List;
 import java.util.Set;
-import java.util.stream.Collectors;
-import java.util.stream.Stream;
-import org.antlr.v4.runtime.ParserRuleContext;
 
-public class PropagateParameter extends AutomatonAnalyzer {
+public class PropagateParameters extends AutomatonAnalyzer {
 
   @Override
   protected void analyze(ClassContext ctx, Automaton a) {
@@ -81,31 +72,8 @@ public class PropagateParameter extends AutomatonAnalyzer {
   }
 
   private Set<ParameterContext> getParameters(MethodContext ctx) {
-    return new Visitor().visit(ctx).collect(Collectors.toCollection(LinkedHashSet::new));
-  }
-
-  private final class Visitor extends SpecificationBaseVisitor<Stream<ParameterContext>> {
-
-    @Override
-    public Stream<ParameterContext> visitReference(ReferenceContext ctx) {
-      TypeTable table = get(TypeTables.class).get(findClassContext(ctx));
-      ParserRuleContext c = table.get(ctx.qualifiedName().getText());
-      if (c instanceof ParameterContext) {
-        return Stream.concat(Stream.of((ParameterContext) c), visitChildren(ctx));
-      } else {
-        return visitChildren(ctx);
-      }
-    }
-
-    @Override
-    protected Stream<ParameterContext> aggregateResult(
-        Stream<ParameterContext> aggregate, Stream<ParameterContext> nextResult) {
-      return Stream.concat(aggregate, nextResult);
-    }
-
-    @Override
-    protected Stream<ParameterContext> defaultResult() {
-      return Stream.empty();
-    }
+    CollectParameters collect = new CollectParameters(ctx);
+    run(collect);
+    return collect.parameters;
   }
 }
