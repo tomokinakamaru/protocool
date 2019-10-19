@@ -14,11 +14,17 @@ public abstract class AutomatonAnalyzer extends Listener {
 
   @Override
   public final void enterClass(ClassContext ctx) {
-    analyze(ctx, get(Automata.class).get(ctx));
+    Automaton a = get(Automata.class).get(ctx);
+    if (a != null) {
+      analyze(ctx, a);
+    }
   }
 
   @Override
   public final void enterChain(ChainContext ctx) {
-    analyze(ctx, get(Automata.class).get(ctx));
+    Automaton a = get(Automata.class).get(ctx);
+    if (a != null) {
+      analyze(ctx, a);
+    }
   }
 }
