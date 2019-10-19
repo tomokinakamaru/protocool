@@ -72,8 +72,6 @@ public class PropagateParameters extends AutomatonAnalyzer {
   }
 
   private Set<ParameterContext> getParameters(MethodContext ctx) {
-    CollectParameters collect = new CollectParameters(ctx);
-    run(collect);
-    return collect.parameters;
+    return run(new CollectParameters(ctx)).parameters;
   }
 }

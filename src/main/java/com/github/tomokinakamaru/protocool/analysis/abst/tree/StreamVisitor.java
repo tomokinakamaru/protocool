@@ -1,16 +1,15 @@
 package com.github.tomokinakamaru.protocool.analysis.abst.tree;
 
+import com.github.tomokinakamaru.antlr4.utility.AbstractStreamVisitor;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FileContext;
 import java.util.stream.Stream;
+import org.antlr.v4.runtime.ParserRuleContext;
 
-public abstract class StreamVisitor<T> extends Visitor<Stream<T>> {
-
-  @Override
-  public Stream<T> defaultResult() {
-    return Stream.empty();
-  }
+public abstract class StreamVisitor<T> extends AbstractStreamVisitor<T>
+    implements DefaultVisitor<Stream<T>> {
 
   @Override
-  public Stream<T> aggregateResult(Stream<T> aggregate, Stream<T> nextResult) {
-    return Stream.concat(aggregate, nextResult);
+  protected ParserRuleContext getContext() {
+    return get(FileContext.class);
   }
 }

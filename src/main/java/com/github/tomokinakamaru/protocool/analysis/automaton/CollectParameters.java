@@ -25,6 +25,11 @@ public class CollectParameters extends StreamVisitor<ParameterContext> {
   }
 
   @Override
+  protected MethodContext getContext() {
+    return context;
+  }
+
+  @Override
   protected void analyze(Stream<ParameterContext> result) {
     parameters = result.collect(Collectors.toCollection(LinkedHashSet::new));
   }
