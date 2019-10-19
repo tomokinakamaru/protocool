@@ -1,12 +1,13 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
-import com.github.tomokinakamaru.protocool.analysis.abst.automaton.AutomatonAnalyzer;
+import com.github.tomokinakamaru.protocool.analysis.abst.automaton.TransitionAnalyzer;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ChainContext;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.MethodContext;
 import com.github.tomokinakamaru.protocool.data.ReturnExpressions;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
-import java.util.Collection;
+import com.github.tomokinakamaru.protocool.data.automaton.Transition;
 
-public class StoreReturnExpressions extends AutomatonAnalyzer {
+public class StoreReturnExpressions extends TransitionAnalyzer {
 
   @Override
   public void initialize() {
@@ -14,16 +15,17 @@ public class StoreReturnExpressions extends AutomatonAnalyzer {
   }
 
   @Override
-  protected void analyze(ChainContext ctx, Automaton a) {
+  protected void analyze(ChainContext ctx, Automaton a, Transition tr) {
     if (ctx.qualifiedName() != null) {
-      a.getTransitionsTo(a.finals)
-          .stream()
-          .map(t -> t.source)
-          .map(a::getTransitionsTo)
-          .flatMap(Collection::stream)
-          .filter(t -> t.symbol.isMethodContext())
-          .map(t -> t.symbol.asMethodContext())
-          .forEach(m -> get(ReturnExpressions.class).put(m, ctx.qualifiedName().getText()));
+      if (a.finals.contains(tr.destination)) {
+        for (Transition t : a.getTransitionsTo(tr.source)) {
+          if (t.symbol.isMethodContext()) {
+            MethodContext c = t.symbol.asMethodContext();
+            String ret = ctx.qualifiedName().getText();
+            get(ReturnExpressions.class).put(c, ret);
+          }
+        }
+      }
     }
   }
 }
