@@ -8,7 +8,7 @@ import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 public class StoreStaticMethods extends AutomatonAnalyzer {
 
   @Override
-  public void init() {
+  public void initialize() {
     set(new StaticMethods());
   }
 

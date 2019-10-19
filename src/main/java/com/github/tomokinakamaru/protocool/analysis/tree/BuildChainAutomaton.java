@@ -15,7 +15,7 @@ import com.github.tomokinakamaru.protocool.data.automaton.Symbol;
 public class BuildChainAutomaton extends Listener {
 
   @Override
-  public void init() {
+  public void initialize() {
     set(new Automata());
   }
 

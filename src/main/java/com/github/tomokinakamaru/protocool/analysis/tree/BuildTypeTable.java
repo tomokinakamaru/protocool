@@ -18,7 +18,7 @@ public class BuildTypeTable extends Listener {
   private TypeTable rootTable;
 
   @Override
-  public void init() {
+  public void initialize() {
     typeTables = set(new TypeTables());
     rootTable = new TypeTable();
     typeTables.put(get(FileContext.class), rootTable);

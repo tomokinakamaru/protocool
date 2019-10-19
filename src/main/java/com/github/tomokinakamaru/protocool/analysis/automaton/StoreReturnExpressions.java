@@ -9,7 +9,7 @@ import java.util.Collection;
 public class StoreReturnExpressions extends AutomatonAnalyzer {
 
   @Override
-  public void init() {
+  public void initialize() {
     set(new ReturnExpressions());
   }
 

@@ -27,8 +27,8 @@ import org.antlr.v4.runtime.ParserRuleContext;
 public abstract class Listener extends AbstractListener implements SpecificationListener {
 
   @Override
-  protected Class<? extends ParserRuleContext> getContextClass() {
-    return FileContext.class;
+  protected ParserRuleContext getContext() {
+    return get(FileContext.class);
   }
 
   @Override

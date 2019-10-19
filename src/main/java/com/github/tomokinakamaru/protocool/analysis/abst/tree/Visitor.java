@@ -27,8 +27,8 @@ import org.antlr.v4.runtime.ParserRuleContext;
 public abstract class Visitor<T> extends AbstractVisitor<T> implements SpecificationVisitor<T> {
 
   @Override
-  protected Class<? extends ParserRuleContext> getContextClass() {
-    return FileContext.class;
+  protected ParserRuleContext getContext() {
+    return get(FileContext.class);
   }
 
   @Override
