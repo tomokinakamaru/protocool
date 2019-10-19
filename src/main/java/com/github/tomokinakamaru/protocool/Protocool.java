@@ -6,8 +6,6 @@ import com.github.tomokinakamaru.antlr4.utility.Context;
 import com.github.tomokinakamaru.protocool.analysis.Parse;
 import com.github.tomokinakamaru.protocool.analysis.automaton.AssignStateNumber;
 import com.github.tomokinakamaru.protocool.analysis.automaton.AssignStateReference;
-import com.github.tomokinakamaru.protocool.analysis.automaton.EncodeState;
-import com.github.tomokinakamaru.protocool.analysis.automaton.EncodeTransition;
 import com.github.tomokinakamaru.protocool.analysis.automaton.PropagateParameters;
 import com.github.tomokinakamaru.protocool.analysis.automaton.RemoveFinalState;
 import com.github.tomokinakamaru.protocool.analysis.automaton.StoreReturnExpressions;
@@ -46,8 +44,6 @@ public class Protocool extends AbstractCompiler {
         new AssignStateReference(),
         new RemoveFinalState(),
         new ValidateSignature(),
-        new AssignStateNumber(),
-        new EncodeState(),
-        new EncodeTransition());
+        new AssignStateNumber());
   }
 }
