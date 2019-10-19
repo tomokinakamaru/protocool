@@ -20,7 +20,7 @@ public class CollectParameters extends StreamVisitor<ParameterContext> {
 
   Set<ParameterContext> parameters;
 
-  public CollectParameters(MethodContext ctx) {
+  CollectParameters(MethodContext ctx) {
     this.context = ctx;
   }
 
