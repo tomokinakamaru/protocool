@@ -1,7 +1,6 @@
 package com.github.tomokinakamaru.protocool.data.automaton;
 
 import com.github.tomokinakamaru.fsa.AbstractAutomaton;
-import java.util.Set;
 
 public class Automaton extends AbstractAutomaton<State, Symbol, Transition, Automaton> {
 
@@ -11,23 +10,9 @@ public class Automaton extends AbstractAutomaton<State, Symbol, Transition, Auto
     super(symbol);
   }
 
-  public Automaton minDeterminized() {
-    return repeated().determinized().repeated().determinized();
-  }
-
   @Override
   protected State newState() {
     return new State();
-  }
-
-  @Override
-  protected State newState(Set<State> states) {
-    return newState();
-  }
-
-  @Override
-  protected State newState(State state) {
-    return newState();
   }
 
   @Override

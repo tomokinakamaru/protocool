@@ -22,7 +22,7 @@ repositories {
 
 dependencies {
     antlr 'org.antlr:antlr4:4.7.2'
-    implementation 'com.github.tomokinakamaru:fsa:f0f3c55655'
+    implementation 'com.github.tomokinakamaru:fsa:356e36b427'
     implementation 'com.github.tomokinakamaru:antlr4-utilities:4c7166d9b8'
     implementation 'com.github.tomokinakamaru:picocli-utilities:9218c78728'
     implementation 'com.google.googlejavaformat:google-java-format:1.7'
