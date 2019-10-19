@@ -3,6 +3,8 @@ package com.github.tomokinakamaru.protocool.analysis.tree;
 import static com.github.tomokinakamaru.protocool.analysis.Utility.findClassContext;
 
 import com.github.tomokinakamaru.protocool.analysis.abst.tree.Listener;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser;
+import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.FileContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.HeadContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.SpecificationParser.ImportContext;
@@ -29,8 +31,8 @@ public class BuildTypeTable extends Listener {
   }
 
   @Override
-  public void enterHead(HeadContext ctx) {
-    rootTable.set(ctx.name().getText(), ctx);
+  public void enterClass(ClassContext ctx) {
+    rootTable.set(ctx.head().name().getText(), ctx);
     typeTables.put(ctx, rootTable.createChildScope());
   }
 
