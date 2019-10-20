@@ -1,6 +1,6 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
-import com.github.tomokinakamaru.protocool.analysis.abst.StreamVisitor;
+import com.github.tomokinakamaru.protocool.analysis.abst.Visitor;
 import com.github.tomokinakamaru.protocool.antlr.GrammarParser.MethodContext;
 import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ParameterContext;
 import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ReferenceContext;
@@ -11,7 +11,7 @@ import java.util.stream.Collectors;
 import java.util.stream.Stream;
 import org.antlr.v4.runtime.ParserRuleContext;
 
-public class CollectParameters extends StreamVisitor<ParameterContext> {
+public class CollectParameters extends Visitor<ParameterContext> {
 
   private final MethodContext context;
 
