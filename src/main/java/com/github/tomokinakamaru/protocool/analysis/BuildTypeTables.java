@@ -1,11 +1,11 @@
 package com.github.tomokinakamaru.protocool.analysis;
 
 import com.github.tomokinakamaru.protocool.analysis.abst.Listener;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ClassContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.FileContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ImportContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ParameterContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ReferenceContext;
+import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ClassContext;
+import com.github.tomokinakamaru.protocool.antlr.GrammarParser.FileContext;
+import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ImportContext;
+import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ParameterContext;
+import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ReferenceContext;
 import com.github.tomokinakamaru.protocool.data.typetable.TypeTable;
 import com.github.tomokinakamaru.protocool.data.typetable.TypeTables;
 

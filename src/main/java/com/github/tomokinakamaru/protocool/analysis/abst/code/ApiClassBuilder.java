@@ -1,8 +1,8 @@
 package com.github.tomokinakamaru.protocool.analysis.abst.code;
 
 import com.github.tomokinakamaru.protocool.analysis.abst.automaton.StateAnalyzer;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ChainContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ClassContext;
+import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ChainContext;
+import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ClassContext;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 import com.github.tomokinakamaru.protocool.data.automaton.State;
 

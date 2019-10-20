@@ -3,9 +3,9 @@ package com.github.tomokinakamaru.protocool.analysis.automaton;
 import static com.github.tomokinakamaru.antlr4.utility.Stringifier.stringify;
 
 import com.github.tomokinakamaru.protocool.analysis.abst.Listener;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ChainContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.MethodContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ReferenceContext;
+import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ChainContext;
+import com.github.tomokinakamaru.protocool.antlr.GrammarParser.MethodContext;
+import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ReferenceContext;
 import com.github.tomokinakamaru.protocool.data.NormalForms;
 import com.github.tomokinakamaru.protocool.data.ReturnExpressions;
 import com.github.tomokinakamaru.protocool.data.StaticMethods;

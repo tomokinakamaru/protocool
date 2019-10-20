@@ -1,8 +1,8 @@
 package com.github.tomokinakamaru.protocool.analysis;
 
 import com.github.tomokinakamaru.antlr4.utility.AbstractParser;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarLexer;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser;
+import com.github.tomokinakamaru.protocool.antlr.GrammarLexer;
+import com.github.tomokinakamaru.protocool.antlr.GrammarParser;
 import com.github.tomokinakamaru.protocool.error.ParseError;
 import java.util.function.Function;
 import org.antlr.v4.runtime.CharStream;

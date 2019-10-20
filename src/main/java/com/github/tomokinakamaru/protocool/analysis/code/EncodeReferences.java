@@ -7,8 +7,8 @@ import com.github.javaparser.ast.type.ReferenceType;
 import com.github.javaparser.ast.type.Type;
 import com.github.javaparser.ast.type.WildcardType;
 import com.github.tomokinakamaru.protocool.analysis.abst.Listener;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ReferenceContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.WildcardContext;
+import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ReferenceContext;
+import com.github.tomokinakamaru.protocool.antlr.GrammarParser.WildcardContext;
 import com.github.tomokinakamaru.protocool.data.code.ReferenceTypes;
 import org.antlr.v4.runtime.tree.ParseTree;
 
