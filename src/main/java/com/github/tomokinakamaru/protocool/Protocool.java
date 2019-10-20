@@ -14,6 +14,7 @@ import com.github.tomokinakamaru.protocool.analysis.automaton.StoreStaticMethods
 import com.github.tomokinakamaru.protocool.analysis.automaton.ValidateReturnType;
 import com.github.tomokinakamaru.protocool.analysis.automaton.ValidateSignature;
 import com.github.tomokinakamaru.protocool.analysis.code.EncodeState;
+import com.github.tomokinakamaru.protocool.analysis.code.EncodeTransition;
 import com.github.tomokinakamaru.protocool.analysis.tree.BuildChainAutomaton;
 import com.github.tomokinakamaru.protocool.analysis.tree.BuildClassAutomaton;
 import com.github.tomokinakamaru.protocool.analysis.tree.BuildNormalForm;
@@ -52,6 +53,7 @@ public class Protocool extends AbstractCompiler {
         new ValidateSignature(),
         new AssignStateNumber(),
         new EncodeState(),
+        new EncodeTransition(),
         new BuildSkeletons());
   }
 }

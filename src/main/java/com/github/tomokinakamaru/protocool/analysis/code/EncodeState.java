@@ -2,16 +2,12 @@ package com.github.tomokinakamaru.protocool.analysis.code;
 
 import static com.github.tomokinakamaru.protocool.data.automaton.State.INITIAL_NUMBER;
 
-import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.tomokinakamaru.protocool.analysis.abst.code.ApiClassBuilder;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.PackageContext;
 import com.github.tomokinakamaru.protocool.data.ApiClasses;
 
 public class EncodeState extends ApiClassBuilder {
-
-  private CompilationUnit unit;
 
   private ClassOrInterfaceDeclaration decl;
 
@@ -24,21 +20,14 @@ public class EncodeState extends ApiClassBuilder {
 
   @Override
   protected void prepare() {
-    unit = new CompilationUnit();
     decl = new ClassOrInterfaceDeclaration();
-    unit.addType(decl);
-    get(ApiClasses.class).put(state, unit);
+    get(ApiClasses.class).put(state, decl);
   }
 
   @Override
   protected void build() {
-    setPackage();
     setModifiers();
     setName();
-  }
-
-  private void setPackage() {
-    unit.setPackageDeclaration(get(PackageContext.class).qualifiedName().getText());
   }
 
   private void setModifiers() {
