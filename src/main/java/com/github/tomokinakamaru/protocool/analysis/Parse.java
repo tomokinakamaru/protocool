@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.analysis.tree;
+package com.github.tomokinakamaru.protocool.analysis;
 
 import com.github.tomokinakamaru.antlr4.utility.AbstractParser;
 import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarLexer;
