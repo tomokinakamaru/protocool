@@ -7,7 +7,6 @@ import com.github.tomokinakamaru.protocool.data.skeleton.Skeleton;
 import com.github.tomokinakamaru.protocool.data.skeleton.Skeletons;
 import java.nio.file.Path;
 import java.nio.file.Paths;
-import java.util.Arrays;
 
 public class BuildSkeletons extends AbstractAnalyzer {
 
@@ -38,10 +37,11 @@ public class BuildSkeletons extends AbstractAnalyzer {
   }
 
   private static Path getPackagePath(String[] ss) {
-    if (ss.length == 1) {
-      return Paths.get(ss[0]);
+    Path path = Paths.get("");
+    for (String s : ss) {
+      path = path.resolve(s);
     }
-    return Paths.get(ss[0], Arrays.copyOfRange(ss, 1, ss.length - 1));
+    return path;
   }
 
   private static String getFileName(CompilationUnit compilationUnit) {
