@@ -2,7 +2,7 @@ package com.github.tomokinakamaru.protocool.analysis;
 
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.tomokinakamaru.antlr4.utility.AbstractAnalyzer;
-import com.github.tomokinakamaru.protocool.data.StateClasses;
+import com.github.tomokinakamaru.protocool.data.ApiClasses;
 import com.github.tomokinakamaru.protocool.data.skeleton.Skeleton;
 import com.github.tomokinakamaru.protocool.data.skeleton.Skeletons;
 import java.nio.file.Path;
@@ -17,7 +17,7 @@ public class BuildSkeletons extends AbstractAnalyzer {
 
   @Override
   public void analyze() {
-    get(StateClasses.class).values().forEach(this::buildSkeleton);
+    get(ApiClasses.class).values().forEach(this::buildSkeleton);
   }
 
   private void buildSkeleton(CompilationUnit compilationUnit) {

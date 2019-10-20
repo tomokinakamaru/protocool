@@ -5,11 +5,11 @@ import static com.github.tomokinakamaru.protocool.data.automaton.State.INITIAL_N
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
-import com.github.tomokinakamaru.protocool.analysis.abst.code.StateClassBuilder;
+import com.github.tomokinakamaru.protocool.analysis.abst.code.ApiClassBuilder;
 import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.PackageContext;
-import com.github.tomokinakamaru.protocool.data.StateClasses;
+import com.github.tomokinakamaru.protocool.data.ApiClasses;
 
-public class EncodeState extends StateClassBuilder {
+public class EncodeState extends ApiClassBuilder {
 
   private CompilationUnit unit;
 
@@ -19,7 +19,7 @@ public class EncodeState extends StateClassBuilder {
 
   @Override
   public void initialize() {
-    set(new StateClasses());
+    set(new ApiClasses());
   }
 
   @Override
@@ -27,30 +27,30 @@ public class EncodeState extends StateClassBuilder {
     unit = new CompilationUnit();
     decl = new ClassOrInterfaceDeclaration();
     unit.addType(decl);
-    get(StateClasses.class).put(state, unit);
+    get(ApiClasses.class).put(state, unit);
   }
 
   @Override
   protected void build() {
     setPackage();
-    setClassModifiers();
-    setClassName();
+    setModifiers();
+    setName();
   }
 
   private void setPackage() {
     unit.setPackageDeclaration(get(PackageContext.class).qualifiedName().getText());
   }
 
-  private void setClassModifiers() {
+  private void setModifiers() {
     decl.setModifier(Modifier.Keyword.PUBLIC, true);
     if (state.number != INITIAL_NUMBER) {
       decl.setModifier(Modifier.Keyword.FINAL, true);
     }
   }
 
-  private void setClassName() {
+  private void setName() {
     if (state.number == INITIAL_NUMBER) {
-      decl.setName(ctx.head().name().getText());
+      decl.setName(context.head().name().getText());
     } else {
       decl.setName(String.format(STATE_NAME_FORMAT, state.number));
     }
