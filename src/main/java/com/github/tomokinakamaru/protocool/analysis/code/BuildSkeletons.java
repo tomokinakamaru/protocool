@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.analysis;
+package com.github.tomokinakamaru.protocool.analysis.code;
 
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
