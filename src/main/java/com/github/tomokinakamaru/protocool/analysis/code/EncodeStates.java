@@ -7,7 +7,7 @@ import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.tomokinakamaru.protocool.analysis.abst.code.ApiClassBuilder;
 import com.github.tomokinakamaru.protocool.data.code.ApiClasses;
 
-public class EncodeState extends ApiClassBuilder {
+public class EncodeStates extends ApiClassBuilder {
 
   private ClassOrInterfaceDeclaration decl;
 

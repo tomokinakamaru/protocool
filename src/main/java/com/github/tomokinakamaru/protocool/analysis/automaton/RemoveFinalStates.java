@@ -4,7 +4,7 @@ import com.github.tomokinakamaru.protocool.analysis.abst.automaton.AutomatonAnal
 import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ClassContext;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 
-public class RemoveFinalState extends AutomatonAnalyzer {
+public class RemoveFinalStates extends AutomatonAnalyzer {
 
   @Override
   protected void analyze(ClassContext ctx, Automaton a) {

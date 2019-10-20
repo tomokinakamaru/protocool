@@ -3,7 +3,7 @@ package com.github.tomokinakamaru.protocool.analysis.code;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.tomokinakamaru.protocool.analysis.abst.code.ApiMethodBuilder;
 
-public class EncodeTransition extends ApiMethodBuilder {
+public class EncodeTransitions extends ApiMethodBuilder {
 
   private MethodDeclaration decl;
 

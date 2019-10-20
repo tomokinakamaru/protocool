@@ -11,7 +11,7 @@ import com.github.tomokinakamaru.protocool.data.automaton.Automatons;
 import com.github.tomokinakamaru.protocool.data.automaton.State;
 import com.github.tomokinakamaru.protocool.data.automaton.Symbol;
 
-public class BuildClassAutomaton extends Listener {
+public class BuildClassAutomatons extends Listener {
 
   @Override
   public void enterClass(ClassContext ctx) {

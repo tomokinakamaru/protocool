@@ -16,7 +16,7 @@ import java.util.Set;
 import java.util.stream.Collectors;
 import org.antlr.v4.runtime.ParserRuleContext;
 
-public class ValidateSignature extends StateAnalyzer {
+public class ValidateSignatures extends StateAnalyzer {
 
   @Override
   protected void analyze(ClassContext ctx, Automaton a, State s) {

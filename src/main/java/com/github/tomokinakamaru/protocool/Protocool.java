@@ -6,19 +6,19 @@ import com.github.tomokinakamaru.antlr4.utility.Context;
 import com.github.tomokinakamaru.protocool.analysis.BuildSkeletons;
 import com.github.tomokinakamaru.protocool.analysis.BuildTypeTables;
 import com.github.tomokinakamaru.protocool.analysis.Parse;
-import com.github.tomokinakamaru.protocool.analysis.automaton.AssignStateNumber;
-import com.github.tomokinakamaru.protocool.analysis.automaton.AssignStateReference;
+import com.github.tomokinakamaru.protocool.analysis.automaton.AssignStateNumbers;
+import com.github.tomokinakamaru.protocool.analysis.automaton.AssignStateReferences;
 import com.github.tomokinakamaru.protocool.analysis.automaton.BuildChainAutomatons;
-import com.github.tomokinakamaru.protocool.analysis.automaton.BuildClassAutomaton;
+import com.github.tomokinakamaru.protocool.analysis.automaton.BuildClassAutomatons;
 import com.github.tomokinakamaru.protocool.analysis.automaton.BuildNormalForms;
 import com.github.tomokinakamaru.protocool.analysis.automaton.FindReturnExpressions;
 import com.github.tomokinakamaru.protocool.analysis.automaton.FindStaticMethods;
 import com.github.tomokinakamaru.protocool.analysis.automaton.PropagateParameters;
-import com.github.tomokinakamaru.protocool.analysis.automaton.RemoveFinalState;
-import com.github.tomokinakamaru.protocool.analysis.automaton.ValidateReturnType;
-import com.github.tomokinakamaru.protocool.analysis.automaton.ValidateSignature;
-import com.github.tomokinakamaru.protocool.analysis.code.EncodeState;
-import com.github.tomokinakamaru.protocool.analysis.code.EncodeTransition;
+import com.github.tomokinakamaru.protocool.analysis.automaton.RemoveFinalStates;
+import com.github.tomokinakamaru.protocool.analysis.automaton.ValidateReturnTypes;
+import com.github.tomokinakamaru.protocool.analysis.automaton.ValidateSignatures;
+import com.github.tomokinakamaru.protocool.analysis.code.EncodeStates;
+import com.github.tomokinakamaru.protocool.analysis.code.EncodeTransitions;
 import com.github.tomokinakamaru.protocool.data.skeleton.Skeletons;
 import java.util.Arrays;
 import java.util.List;
@@ -43,15 +43,15 @@ public class Protocool extends AbstractCompiler {
         new FindStaticMethods(),
         new FindReturnExpressions(),
         new BuildNormalForms(),
-        new BuildClassAutomaton(),
+        new BuildClassAutomatons(),
         new PropagateParameters(),
-        new ValidateReturnType(),
-        new AssignStateReference(),
-        new RemoveFinalState(),
-        new ValidateSignature(),
-        new AssignStateNumber(),
-        new EncodeState(),
-        new EncodeTransition(),
+        new ValidateReturnTypes(),
+        new AssignStateReferences(),
+        new RemoveFinalStates(),
+        new ValidateSignatures(),
+        new AssignStateNumbers(),
+        new EncodeStates(),
+        new EncodeTransitions(),
         new BuildSkeletons());
   }
 }

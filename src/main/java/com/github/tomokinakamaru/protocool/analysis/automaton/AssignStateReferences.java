@@ -5,7 +5,7 @@ import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ClassCon
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 import com.github.tomokinakamaru.protocool.data.automaton.Transition;
 
-public class AssignStateReference extends TransitionAnalyzer {
+public class AssignStateReferences extends TransitionAnalyzer {
 
   @Override
   protected void analyze(ClassContext ctx, Automaton a, Transition t) {

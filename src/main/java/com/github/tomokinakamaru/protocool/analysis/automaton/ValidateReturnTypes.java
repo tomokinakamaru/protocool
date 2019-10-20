@@ -9,7 +9,7 @@ import com.github.tomokinakamaru.protocool.data.automaton.Transition;
 import com.github.tomokinakamaru.protocool.error.ReturnTypeConflict;
 import java.util.Set;
 
-public class ValidateReturnType extends StateAnalyzer {
+public class ValidateReturnTypes extends StateAnalyzer {
 
   @Override
   protected void analyze(ClassContext ctx, Automaton a, State s) {

@@ -12,7 +12,7 @@ import java.util.HashSet;
 import java.util.List;
 import java.util.Set;
 
-public class AssignStateNumber extends AutomatonAnalyzer {
+public class AssignStateNumbers extends AutomatonAnalyzer {
 
   @Override
   protected void analyze(ClassContext ctx, Automaton a) {
