@@ -17,6 +17,7 @@ import com.github.tomokinakamaru.protocool.analysis.automaton.PropagateParameter
 import com.github.tomokinakamaru.protocool.analysis.automaton.RemoveFinalStates;
 import com.github.tomokinakamaru.protocool.analysis.automaton.ValidateReturnTypes;
 import com.github.tomokinakamaru.protocool.analysis.automaton.ValidateSignatures;
+import com.github.tomokinakamaru.protocool.analysis.code.EncodeParameters;
 import com.github.tomokinakamaru.protocool.analysis.code.EncodeReferences;
 import com.github.tomokinakamaru.protocool.analysis.code.EncodeStates;
 import com.github.tomokinakamaru.protocool.analysis.code.EncodeTransitions;
@@ -52,6 +53,7 @@ public class Protocool extends AbstractCompiler {
         new ValidateSignatures(),
         new AssignStateNumbers(),
         new EncodeReferences(),
+        new EncodeParameters(),
         new EncodeStates(),
         new EncodeTransitions(),
         new BuildSkeletons());

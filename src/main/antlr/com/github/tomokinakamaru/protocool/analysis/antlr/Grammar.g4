@@ -16,7 +16,7 @@ superClass: 'extends' reference ;
 
 interfaces: 'implements' reference+ ;
 
-parameter: name ('extends' reference)? ;
+parameter: name ('extends' reference (',' reference)*)? ;
 
 chain: STATIC? reference expression ('return' qualifiedName)? ;
 

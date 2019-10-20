@@ -5,7 +5,10 @@ import static com.github.tomokinakamaru.protocool.data.automaton.State.INITIAL_N
 import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.tomokinakamaru.protocool.analysis.abst.code.ApiClassBuilder;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ParameterContext;
 import com.github.tomokinakamaru.protocool.data.code.ApiClasses;
+import com.github.tomokinakamaru.protocool.data.code.TypeParameters;
 
 public class EncodeStates extends ApiClassBuilder {
 
@@ -33,6 +36,7 @@ public class EncodeStates extends ApiClassBuilder {
   protected void build() {
     setModifiers();
     setName();
+    setTypeParameters();
   }
 
   private void setModifiers() {
@@ -44,6 +48,12 @@ public class EncodeStates extends ApiClassBuilder {
       decl.setName(context.head().name().getText());
     } else {
       decl.setName(String.format(STATE_NAME_FORMAT, state.number));
+    }
+  }
+
+  private void setTypeParameters() {
+    for (ParameterContext c : state.parameters) {
+      decl.addTypeParameter(get(TypeParameters.class).get(c));
     }
   }
 }
