@@ -9,14 +9,14 @@ import com.github.javaparser.ast.type.WildcardType;
 import com.github.tomokinakamaru.protocool.analysis.abst.Listener;
 import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ReferenceContext;
 import com.github.tomokinakamaru.protocool.antlr.GrammarParser.WildcardContext;
-import com.github.tomokinakamaru.protocool.data.code.ClassTypes;
+import com.github.tomokinakamaru.protocool.data.code.ReferenceTypes;
 import org.antlr.v4.runtime.tree.ParseTree;
 
 public class EncodeReferenceContexts extends Listener {
 
   @Override
   public void initialize() {
-    set(new ClassTypes());
+    set(new ReferenceTypes());
   }
 
   @Override
@@ -25,7 +25,7 @@ public class EncodeReferenceContexts extends Listener {
     for (int i = 0; i < ctx.ARRAY().size(); i++) {
       t = new ArrayType(t);
     }
-    get(ClassTypes.class).put(ctx, t);
+    get(ReferenceTypes.class).put(ctx, t);
   }
 
   private ClassOrInterfaceType encode(ReferenceContext ctx) {
@@ -51,7 +51,7 @@ public class EncodeReferenceContexts extends Listener {
   }
 
   private ReferenceType encodeArgument(ReferenceContext ctx) {
-    return get(ClassTypes.class).get(ctx);
+    return get(ReferenceTypes.class).get(ctx);
   }
 
   private Type encodeArgument(WildcardContext ctx) {

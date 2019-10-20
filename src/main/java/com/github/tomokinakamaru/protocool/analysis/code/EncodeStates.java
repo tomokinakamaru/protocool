@@ -10,7 +10,7 @@ import com.github.tomokinakamaru.protocool.analysis.abst.code.ApiClassBuilder;
 import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ParameterContext;
 import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ReferenceContext;
 import com.github.tomokinakamaru.protocool.data.code.ApiClasses;
-import com.github.tomokinakamaru.protocool.data.code.ClassTypes;
+import com.github.tomokinakamaru.protocool.data.code.ReferenceTypes;
 import com.github.tomokinakamaru.protocool.data.code.TypeParameters;
 
 public class EncodeStates extends ApiClassBuilder {
@@ -65,7 +65,7 @@ public class EncodeStates extends ApiClassBuilder {
   private void setSuperClass() {
     if (context.head().superClass() != null) {
       ReferenceContext c = context.head().superClass().reference();
-      ClassOrInterfaceType t = get(ClassTypes.class).get(c).asClassOrInterfaceType();
+      ClassOrInterfaceType t = get(ReferenceTypes.class).get(c).asClassOrInterfaceType();
       decl.setExtendedTypes(new NodeList<>(t));
     }
   }
@@ -74,7 +74,7 @@ public class EncodeStates extends ApiClassBuilder {
     if (context.head().interfaces() != null) {
       NodeList<ClassOrInterfaceType> list = new NodeList<>();
       for (ReferenceContext c : context.head().interfaces().reference()) {
-        list.add(get(ClassTypes.class).get(c).asClassOrInterfaceType());
+        list.add(get(ReferenceTypes.class).get(c).asClassOrInterfaceType());
       }
       decl.setImplementedTypes(list);
     }

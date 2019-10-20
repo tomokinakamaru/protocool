@@ -3,7 +3,7 @@ package com.github.tomokinakamaru.protocool.analysis.code;
 import com.github.javaparser.ast.body.MethodDeclaration;
 import com.github.tomokinakamaru.protocool.analysis.abst.code.ApiMethodBuilder;
 import com.github.tomokinakamaru.protocool.data.code.ApiClasses;
-import com.github.tomokinakamaru.protocool.data.code.ClassTypes;
+import com.github.tomokinakamaru.protocool.data.code.ReferenceTypes;
 
 public class EncodeTransitions extends ApiMethodBuilder {
 
@@ -27,7 +27,7 @@ public class EncodeTransitions extends ApiMethodBuilder {
 
   private void setReturnType() {
     if (transition.destination.context != null) {
-      decl.setType(get(ClassTypes.class).get(transition.destination.context));
+      decl.setType(get(ReferenceTypes.class).get(transition.destination.context));
     } else {
       decl.setType(get(ApiClasses.class).get(transition.destination).getName().asString());
     }
