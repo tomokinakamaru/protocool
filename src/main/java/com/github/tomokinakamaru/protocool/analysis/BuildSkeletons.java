@@ -1,12 +1,10 @@
-package com.github.tomokinakamaru.protocool.analysis.code;
+package com.github.tomokinakamaru.protocool.analysis;
 
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.tomokinakamaru.antlr4.utility.AbstractAnalyzer;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser;
 import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.FileContext;
-import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.PackageContext;
-import com.github.tomokinakamaru.protocool.data.ApiClasses;
+import com.github.tomokinakamaru.protocool.data.code.ApiClasses;
 import com.github.tomokinakamaru.protocool.data.skeleton.Skeleton;
 import com.github.tomokinakamaru.protocool.data.skeleton.Skeletons;
 import java.util.Collection;

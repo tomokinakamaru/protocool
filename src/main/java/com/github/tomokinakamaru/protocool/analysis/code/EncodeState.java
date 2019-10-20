@@ -5,7 +5,7 @@ import static com.github.tomokinakamaru.protocool.data.automaton.State.INITIAL_N
 import com.github.javaparser.ast.Modifier;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.tomokinakamaru.protocool.analysis.abst.code.ApiClassBuilder;
-import com.github.tomokinakamaru.protocool.data.ApiClasses;
+import com.github.tomokinakamaru.protocool.data.code.ApiClasses;
 
 public class EncodeState extends ApiClassBuilder {
 
@@ -32,9 +32,6 @@ public class EncodeState extends ApiClassBuilder {
 
   private void setModifiers() {
     decl.setModifier(Modifier.Keyword.PUBLIC, true);
-    if (state.number != INITIAL_NUMBER) {
-      decl.setModifier(Modifier.Keyword.FINAL, true);
-    }
   }
 
   private void setName() {

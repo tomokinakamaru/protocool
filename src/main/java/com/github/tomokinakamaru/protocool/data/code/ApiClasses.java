@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.data;
+package com.github.tomokinakamaru.protocool.data.code;
 
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.tomokinakamaru.protocool.data.automaton.State;
