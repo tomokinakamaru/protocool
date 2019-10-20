@@ -1,4 +1,4 @@
-package com.github.tomokinakamaru.protocool.analysis.tree;
+package com.github.tomokinakamaru.protocool.analysis.automaton;
 
 import static com.github.tomokinakamaru.antlr4.utility.Stringifier.stringify;
 
