@@ -7,7 +7,7 @@ import com.github.tomokinakamaru.protocool.data.ReturnExpressions;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 import com.github.tomokinakamaru.protocool.data.automaton.Transition;
 
-public class StoreReturnExpressions extends TransitionAnalyzer {
+public class FindReturnExpressions extends TransitionAnalyzer {
 
   @Override
   public void initialize() {

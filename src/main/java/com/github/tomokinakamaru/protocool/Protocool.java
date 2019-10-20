@@ -8,13 +8,13 @@ import com.github.tomokinakamaru.protocool.analysis.BuildTypeTables;
 import com.github.tomokinakamaru.protocool.analysis.Parse;
 import com.github.tomokinakamaru.protocool.analysis.automaton.AssignStateNumber;
 import com.github.tomokinakamaru.protocool.analysis.automaton.AssignStateReference;
-import com.github.tomokinakamaru.protocool.analysis.automaton.BuildChainAutomaton;
+import com.github.tomokinakamaru.protocool.analysis.automaton.BuildChainAutomatons;
 import com.github.tomokinakamaru.protocool.analysis.automaton.BuildClassAutomaton;
-import com.github.tomokinakamaru.protocool.analysis.automaton.BuildNormalForm;
+import com.github.tomokinakamaru.protocool.analysis.automaton.BuildNormalForms;
+import com.github.tomokinakamaru.protocool.analysis.automaton.FindReturnExpressions;
+import com.github.tomokinakamaru.protocool.analysis.automaton.FindStaticMethods;
 import com.github.tomokinakamaru.protocool.analysis.automaton.PropagateParameters;
 import com.github.tomokinakamaru.protocool.analysis.automaton.RemoveFinalState;
-import com.github.tomokinakamaru.protocool.analysis.automaton.StoreReturnExpressions;
-import com.github.tomokinakamaru.protocool.analysis.automaton.StoreStaticMethods;
 import com.github.tomokinakamaru.protocool.analysis.automaton.ValidateReturnType;
 import com.github.tomokinakamaru.protocool.analysis.automaton.ValidateSignature;
 import com.github.tomokinakamaru.protocool.analysis.code.EncodeState;
@@ -39,11 +39,11 @@ public class Protocool extends AbstractCompiler {
     return Arrays.asList(
         new Parse(),
         new BuildTypeTables(),
-        new BuildNormalForm(),
-        new BuildChainAutomaton(),
-        new StoreStaticMethods(),
-        new StoreReturnExpressions(),
-        new BuildNormalForm(),
+        new BuildNormalForms(),
+        new BuildChainAutomatons(),
+        new FindStaticMethods(),
+        new FindReturnExpressions(),
+        new BuildNormalForms(),
         new BuildClassAutomaton(),
         new PropagateParameters(),
         new ValidateReturnType(),

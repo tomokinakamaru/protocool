@@ -6,7 +6,7 @@ import com.github.tomokinakamaru.protocool.data.StaticMethods;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 import com.github.tomokinakamaru.protocool.data.automaton.Transition;
 
-public class StoreStaticMethods extends TransitionAnalyzer {
+public class FindStaticMethods extends TransitionAnalyzer {
 
   @Override
   public void initialize() {

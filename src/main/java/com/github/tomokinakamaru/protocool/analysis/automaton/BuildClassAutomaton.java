@@ -6,8 +6,8 @@ import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ChainCon
 import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ClassContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ReferenceContext;
 import com.github.tomokinakamaru.protocool.data.NormalForms;
-import com.github.tomokinakamaru.protocool.data.automaton.Automata;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
+import com.github.tomokinakamaru.protocool.data.automaton.Automatons;
 import com.github.tomokinakamaru.protocool.data.automaton.State;
 import com.github.tomokinakamaru.protocool.data.automaton.Symbol;
 
@@ -15,7 +15,7 @@ public class BuildClassAutomaton extends Listener {
 
   @Override
   public void enterClass(ClassContext ctx) {
-    get(Automata.class).put(ctx, create(ctx));
+    get(Automatons.class).put(ctx, create(ctx));
   }
 
   private Automaton create(ClassContext ctx) {
@@ -32,7 +32,7 @@ public class BuildClassAutomaton extends Listener {
   }
 
   private Automaton create(ChainContext ctx) {
-    return get(Automata.class).get(ctx).and(create(ctx.reference()));
+    return get(Automatons.class).get(ctx).and(create(ctx.reference()));
   }
 
   private Automaton create(ReferenceContext ctx) {

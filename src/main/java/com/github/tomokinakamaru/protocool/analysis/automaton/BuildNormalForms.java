@@ -10,7 +10,7 @@ import com.github.tomokinakamaru.protocool.data.NormalForms;
 import com.github.tomokinakamaru.protocool.data.ReturnExpressions;
 import com.github.tomokinakamaru.protocool.data.StaticMethods;
 
-public class BuildNormalForm extends Listener {
+public class BuildNormalForms extends Listener {
 
   @Override
   public void initialize() {

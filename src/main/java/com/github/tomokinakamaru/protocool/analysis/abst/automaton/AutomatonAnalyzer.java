@@ -3,8 +3,8 @@ package com.github.tomokinakamaru.protocool.analysis.abst.automaton;
 import com.github.tomokinakamaru.protocool.analysis.abst.Listener;
 import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ChainContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ClassContext;
-import com.github.tomokinakamaru.protocool.data.automaton.Automata;
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
+import com.github.tomokinakamaru.protocool.data.automaton.Automatons;
 
 public abstract class AutomatonAnalyzer extends Listener {
 
@@ -14,7 +14,7 @@ public abstract class AutomatonAnalyzer extends Listener {
 
   @Override
   public final void enterClass(ClassContext ctx) {
-    Automaton a = get(Automata.class).get(ctx);
+    Automaton a = get(Automatons.class).get(ctx);
     if (a != null) {
       analyze(ctx, a);
     }
@@ -22,7 +22,7 @@ public abstract class AutomatonAnalyzer extends Listener {
 
   @Override
   public final void enterChain(ChainContext ctx) {
-    Automaton a = get(Automata.class).get(ctx);
+    Automaton a = get(Automatons.class).get(ctx);
     if (a != null) {
       analyze(ctx, a);
     }
