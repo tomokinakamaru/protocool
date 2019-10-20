@@ -19,7 +19,6 @@ import com.github.tomokinakamaru.protocool.analysis.automaton.ValidateReturnType
 import com.github.tomokinakamaru.protocool.analysis.automaton.ValidateSignature;
 import com.github.tomokinakamaru.protocool.analysis.code.EncodeState;
 import com.github.tomokinakamaru.protocool.analysis.code.EncodeTransition;
-import com.github.tomokinakamaru.protocool.analysis.code.FindPackage;
 import com.github.tomokinakamaru.protocool.data.skeleton.Skeletons;
 import java.util.Arrays;
 import java.util.List;
@@ -53,7 +52,6 @@ public class Protocool extends AbstractCompiler {
         new AssignStateNumber(),
         new EncodeState(),
         new EncodeTransition(),
-        new FindPackage(),
         new BuildSkeletons());
   }
 }
