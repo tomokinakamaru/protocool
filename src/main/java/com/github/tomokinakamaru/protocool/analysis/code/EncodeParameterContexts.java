@@ -6,12 +6,12 @@ import com.github.javaparser.ast.type.TypeParameter;
 import com.github.tomokinakamaru.protocool.analysis.abst.Listener;
 import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ParameterContext;
 import com.github.tomokinakamaru.protocool.antlr.GrammarParser.ReferenceContext;
-import com.github.tomokinakamaru.protocool.data.code.ReferenceTypes;
+import com.github.tomokinakamaru.protocool.data.code.ClassTypes;
 import com.github.tomokinakamaru.protocool.data.code.TypeParameters;
 import java.util.List;
 import java.util.stream.Collectors;
 
-public class EncodeParameters extends Listener {
+public class EncodeParameterContexts extends Listener {
 
   @Override
   public void initialize() {
@@ -28,7 +28,7 @@ public class EncodeParameters extends Listener {
 
   private NodeList<ClassOrInterfaceType> encodeBounds(List<ReferenceContext> list) {
     return list.stream()
-        .map(c -> get(ReferenceTypes.class).get(c).asClassOrInterfaceType())
+        .map(c -> get(ClassTypes.class).get(c).asClassOrInterfaceType())
         .collect(Collectors.toCollection(NodeList::new));
   }
 }
