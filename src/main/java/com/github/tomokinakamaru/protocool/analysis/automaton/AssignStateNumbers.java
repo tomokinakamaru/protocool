@@ -22,8 +22,10 @@ public class AssignStateNumbers extends AutomatonAnalyzer {
     int n = INITIAL_NUMBER;
     while (!queue.isEmpty()) {
       State source = queue.remove(0);
-      source.number = n;
-      n += 1;
+      if (source.context == null) {
+        source.number = n;
+        n += 1;
+      }
       for (Transition transition : a.transitions) {
         if (!queuedStates.contains(transition.destination)) {
           queue.add(transition.destination);

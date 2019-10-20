@@ -19,6 +19,11 @@ public class EncodeStates extends ApiClassBuilder {
   }
 
   @Override
+  protected boolean skip() {
+    return state.context != null;
+  }
+
+  @Override
   protected void prepare() {
     decl = new ClassOrInterfaceDeclaration();
     get(ApiClasses.class).put(state, decl);

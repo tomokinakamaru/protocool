@@ -12,6 +12,8 @@ public abstract class ApiClassBuilder extends StateAnalyzer {
 
   protected State state;
 
+  protected abstract boolean skip();
+
   protected abstract void prepare();
 
   protected abstract void build();
@@ -20,8 +22,10 @@ public abstract class ApiClassBuilder extends StateAnalyzer {
   protected final void analyze(ClassContext ctx, Automaton a, State s) {
     this.context = ctx;
     this.state = s;
-    prepare();
-    build();
+    if (!skip()) {
+      prepare();
+      build();
+    }
   }
 
   @Override
