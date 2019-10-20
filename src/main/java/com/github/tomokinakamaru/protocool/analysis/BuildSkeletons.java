@@ -33,8 +33,15 @@ public class BuildSkeletons extends AbstractAnalyzer {
         .getPackageDeclaration()
         .map(p -> p.getName().asString())
         .map(s -> s.split("\\."))
-        .map(ss -> Paths.get(ss[0], Arrays.copyOfRange(ss, 1, ss.length - 1)))
+        .map(BuildSkeletons::getPackagePath)
         .orElse(Paths.get(""));
+  }
+
+  private static Path getPackagePath(String[] ss) {
+    if (ss.length == 1) {
+      return Paths.get(ss[0]);
+    }
+    return Paths.get(ss[0], Arrays.copyOfRange(ss, 1, ss.length - 1));
   }
 
   private static String getFileName(CompilationUnit compilationUnit) {

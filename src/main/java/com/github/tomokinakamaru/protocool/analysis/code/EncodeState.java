@@ -5,6 +5,7 @@ import static com.github.tomokinakamaru.protocool.data.automaton.State.INITIAL_N
 import com.github.javaparser.ast.CompilationUnit;
 import com.github.javaparser.ast.body.ClassOrInterfaceDeclaration;
 import com.github.tomokinakamaru.protocool.analysis.abst.code.StateClassBuilder;
+import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.PackageContext;
 import com.github.tomokinakamaru.protocool.data.StateClasses;
 
 public class EncodeState extends StateClassBuilder {
@@ -30,7 +31,12 @@ public class EncodeState extends StateClassBuilder {
 
   @Override
   protected void build() {
+    buildPackage();
     buildClassName();
+  }
+
+  private void buildPackage() {
+    unit.setPackageDeclaration(get(PackageContext.class).qualifiedName().getText());
   }
 
   private void buildClassName() {

@@ -18,6 +18,7 @@ import com.github.tomokinakamaru.protocool.analysis.tree.BuildChainAutomaton;
 import com.github.tomokinakamaru.protocool.analysis.tree.BuildClassAutomaton;
 import com.github.tomokinakamaru.protocool.analysis.tree.BuildNormalForm;
 import com.github.tomokinakamaru.protocool.analysis.tree.BuildTypeTable;
+import com.github.tomokinakamaru.protocool.analysis.tree.StorePackage;
 import com.github.tomokinakamaru.protocool.data.skeleton.Skeletons;
 import java.util.Arrays;
 import java.util.List;
@@ -36,6 +37,7 @@ public class Protocool extends AbstractCompiler {
   protected List<AbstractAnalyzer> analyzers() {
     return Arrays.asList(
         new Parse(),
+        new StorePackage(),
         new BuildTypeTable(),
         new BuildNormalForm(),
         new BuildChainAutomaton(),
