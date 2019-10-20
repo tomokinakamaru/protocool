@@ -6,9 +6,9 @@ import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ClassCon
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 import com.github.tomokinakamaru.protocool.data.automaton.State;
 
-public abstract class StateClassBuilder extends StateAnalyzer {
+public abstract class ApiClassBuilder extends StateAnalyzer {
 
-  protected ClassContext ctx;
+  protected ClassContext context;
 
   protected State state;
 
@@ -18,7 +18,7 @@ public abstract class StateClassBuilder extends StateAnalyzer {
 
   @Override
   protected final void analyze(ClassContext ctx, Automaton a, State s) {
-    this.ctx = ctx;
+    this.context = ctx;
     this.state = s;
     prepare();
     build();
