@@ -1,12 +1,9 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
-import static com.github.tomokinakamaru.protocool.analysis.Utility.findClassContext;
-
 import com.github.tomokinakamaru.protocool.analysis.abst.tree.StreamVisitor;
 import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.MethodContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ParameterContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ReferenceContext;
-import com.github.tomokinakamaru.protocool.data.typetable.TypeTable;
 import com.github.tomokinakamaru.protocool.data.typetable.TypeTables;
 import java.util.LinkedHashSet;
 import java.util.Set;
@@ -36,8 +33,7 @@ public class CollectParameters extends StreamVisitor<ParameterContext> {
 
   @Override
   public Stream<ParameterContext> visitReference(ReferenceContext ctx) {
-    TypeTable table = get(TypeTables.class).get(findClassContext(ctx));
-    ParserRuleContext c = table.get(ctx.qualifiedName().getText());
+    ParserRuleContext c = get(TypeTables.class).get(ctx).get(ctx.qualifiedName().getText());
     if (c instanceof ParameterContext) {
       return Stream.concat(Stream.of((ParameterContext) c), visitChildren(ctx));
     } else {

@@ -1,7 +1,5 @@
 package com.github.tomokinakamaru.protocool.analysis.automaton;
 
-import static com.github.tomokinakamaru.protocool.analysis.Utility.findClassContext;
-
 import com.github.tomokinakamaru.protocool.analysis.abst.automaton.StateAnalyzer;
 import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ArgumentContext;
 import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.ClassContext;
@@ -11,7 +9,6 @@ import com.github.tomokinakamaru.protocool.analysis.antlr.GrammarParser.Paramete
 import com.github.tomokinakamaru.protocool.data.automaton.Automaton;
 import com.github.tomokinakamaru.protocool.data.automaton.State;
 import com.github.tomokinakamaru.protocool.data.automaton.Transition;
-import com.github.tomokinakamaru.protocool.data.typetable.TypeTable;
 import com.github.tomokinakamaru.protocool.data.typetable.TypeTables;
 import com.github.tomokinakamaru.protocool.error.SignatureConflict;
 import java.util.List;
@@ -36,13 +33,13 @@ public class ValidateSignature extends StateAnalyzer {
   }
 
   private String buildSignature(MethodContext ctx) {
-    TypeTable table = get(TypeTables.class).get(findClassContext(ctx));
-    return ctx.name().getText() + "(" + buildSignature(ctx.argument(), table) + ")";
+    return ctx.name().getText() + "(" + buildSignature(ctx.argument()) + ")";
   }
 
-  private String buildSignature(List<ArgumentContext> lst, TypeTable table) {
+  private String buildSignature(List<ArgumentContext> lst) {
+    TypeTables tables = get(TypeTables.class);
     return lst.stream()
-        .map(a -> table.get(a.reference().qualifiedName().getText()))
+        .map(a -> tables.get(a.reference()).get(a.reference().qualifiedName().getText()))
         .map(this::buildSignature)
         .collect(Collectors.joining(","));
   }
