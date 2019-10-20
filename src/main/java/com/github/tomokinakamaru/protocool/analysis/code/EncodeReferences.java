@@ -28,7 +28,7 @@ public class EncodeReferences extends Listener {
     get(ReferenceTypes.class).put(ctx, t);
   }
 
-  private ReferenceType encode(ReferenceContext ctx) {
+  private ClassOrInterfaceType encode(ReferenceContext ctx) {
     ClassOrInterfaceType type = new ClassOrInterfaceType();
     type.setName(ctx.qualifiedName().getText());
     NodeList<Type> list = encodeArguments(ctx);
