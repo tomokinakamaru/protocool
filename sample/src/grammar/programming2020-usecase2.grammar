@@ -1,0 +1,13 @@
+package programming2020.usecase2;
+
+class API {
+  ITEM;
+  static Nested<EndOfDoc, ITEM> begin(ITEM item) ;
+}
+class Nested<X, ITEM> {
+  Nested<Nested<X, ITEM>, ITEM> begin(ITEM item) ;
+  X end(ITEM item) return Evaluator.end ;
+}
+class EndOfDoc {
+  String asTeXStr() return Evaluator.asTeXStr ;
+}

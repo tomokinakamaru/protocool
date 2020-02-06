@@ -1,0 +1,80 @@
+buildscript{
+    repositories {
+        mavenCentral()
+        maven { url 'https://jitpack.io' }
+    }
+    dependencies{
+        classpath 'com.github.tomokinakamaru.antlr4-utilities:plugin:0.1.0'
+    }
+}
+
+plugins {
+    id 'java'
+    id 'jacoco'
+    id 'com.github.ben-manes.versions' version '0.27.0'
+    id 'com.github.johnrengelman.shadow' version '5.2.0'
+    id 'com.github.sherter.google-java-format' version '0.8'
+}
+
+apply plugin: com.github.tomokinakamaru.utility.antlr4.Plugin
+
+group 'com.github.tomokinakamaru'
+
+version '0.1.0'
+
+sourceCompatibility = 1.8
+
+targetCompatibility = 1.8
+
+repositories {
+    mavenCentral()
+    maven { url 'https://jitpack.io' }
+}
+
+dependencies {
+    implementation 'com.github.tomokinakamaru:antlr4-utilities:0.1.0'
+    implementation 'com.github.tomokinakamaru:fsa:0.1.0'
+    implementation 'com.github.tomokinakamaru:picocli-utilities:0.1.0'
+    implementation 'com.github.javaparser:javaparser-core:3.15.11'
+    implementation 'com.google.googlejavaformat:google-java-format:1.7'
+    testImplementation 'org.junit.jupiter:junit-jupiter-api:5.6.0'
+    testImplementation 'org.junit.jupiter:junit-jupiter-params:5.6.0'
+    testRuntimeOnly 'org.junit.jupiter:junit-jupiter-engine:5.6.0'
+}
+
+antlr {
+    filter { line -> line
+            .replaceAll('Class_', 'Class')
+            .replaceAll('Package_', 'Package')
+            .replaceAll('Import_', 'Import') }
+}
+
+test {
+    useJUnitPlatform()
+}
+
+jacoco {
+    toolVersion = '0.8.4'
+}
+
+jacocoTestReport {
+    reports {
+        xml.enabled = false
+        csv.enabled = false
+    }
+}
+
+check.dependsOn jacocoTestReport
+
+shadowJar {
+    manifest.attributes(
+            'Main-Class' : "${project.group}.${project.name}.EntryPoint",
+            'Version': "${project.version}"
+    )
+}
+
+task compileSample(type: Exec) {
+    dependsOn test
+    workingDir "$projectDir/sample"
+    commandLine 'bash', 'gradlew', 'compileTestJava'
+}

@@ -1,0 +1,12 @@
+package programming2020.usecase3;
+
+import String;
+
+class Assertions {
+  static PredicateAssert assertThat(String s);
+}
+
+class PredicateAssert {
+  PredicateAssert startsWith(String s) { Action.startsWith };
+  PredicateAssert endsWith(String s) { Action.endsWith };
+}

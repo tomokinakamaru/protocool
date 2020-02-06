@@ -1,0 +1,26 @@
+package programming2020.usecase1;
+
+class Matrix {
+  ROW extends Size;
+  COL extends Size;
+  static IntMat<ROW, COL> randInt() row(ROW row) col(COL col);
+  static FltMat<ROW, COL> randFlt() row(ROW row) col(COL col);
+}
+
+class IntMat<ROW extends Size, COL extends Size> {
+  NEW_COL extends Size;
+  IntMat<ROW, COL> plus(IntMat<ROW, COL> intMat);
+  FltMat<ROW, COL> plus(FltMat<ROW, COL> fltMat);
+  IntMat<ROW, NEW_COL> mult(IntMat<COL, NEW_COL> intMat);
+  FltMat<ROW, NEW_COL> mult(FltMat<COL, NEW_COL> fltMat);
+  int[][] toArray() return Evaluator.toIntArray;
+}
+
+class FltMat<ROW extends Size, COL extends Size> {
+  NEW_COL extends Size;
+  FltMat<ROW, COL> plus(IntMat<ROW, COL> intMat);
+  FltMat<ROW, COL> plus(FltMat<ROW, COL> fltMat);
+  FltMat<ROW, NEW_COL> mult(IntMat<COL, NEW_COL> intMat);
+  FltMat<ROW, NEW_COL> mult(FltMat<COL, NEW_COL> fltMat);
+  float[][] toArray() return Evaluator.toFloatArray;
+}
